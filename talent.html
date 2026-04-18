@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worktales | For Talent</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="assets/worktales.png" alt="Worktales" class="nav-logo-img">
+                    <span class="sr-only">Worktales</span>
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu nav-actions">
+                <li><a class="nav-link" href="aboutus.html">About Us</a></li>
+                <li><a class="nav-link" href="insights.html">Insights</a></li>
+                <li><a class="nav-link" href="talent.html">For Talent</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="talent-hero">
+        <div class="talent-hero__glow"></div>
+        <img src="assets/g.png" alt="" class="talent-hero__shape" aria-hidden="true">
+
+        <div class="container talent-hero__content">
+            <div class="talent-hero__copy">
+                <h1 class="talent-hero__title">
+                    <span>BUILD A&nbsp;CAREER</span>
+                    <span class="highlight">WORTH TELLING</span>
+                </h1>
+            </div>
+            <div class="talent-hero__image">
+                <picture>
+                    <source srcset="assets/brief2.png" media="(max-width: 576px)">
+                    <img src="assets/brief.png" alt="Professional carrying a briefcase" loading="lazy">
+                </picture>
+            </div>
+        </div>
+
+        <div class="container talent-hero__actions">
+            <article class="hero-action-card">
+                <h3>Join the Worktales Talent Network</h3>
+                <p>Stay connected to opportunities that align with your trajectory and timing.</p>
+                <ul>
+                    <li>Regular check-ins so we always understand your preferences.</li>
+                    <li>Introductions to teams that value context and culture.</li>
+                    <li>Visibility on roles before they are widely published.</li>
+                </ul>
+                <a href="https://recruitcrm.io/talent_pool_submission/Worktales" class="cta-primary">Submit your profile here</a>
+                <small>Prefer email? Send your CV to connect@worktales.com</small>
+            </article>
+
+            <article class="hero-action-card">
+                <h3>Explore Open Roles</h3>
+                <p>View and apply to active positions from Worktales partner organizations.</p>
+                <ul>
+                    <li>Transparent briefs about the role, team, and expectations.</li>
+                    <li>Guidance on how to present the chapters of your experience.</li>
+                    <li>Direct connection to our CRM so your application never disappears.</li>
+                </ul>
+                <a href="https://recruitcrm.io/jobs/Worktales_jobs" class="cta-primary">Explore open roles</a>
+                <small>Browse live roles and apply directly.</small>
+            </article>
+        </div>
+    </section>
+
+    
+
+
+    <div class="section-divider"></div>
+
+    <section id="talent-process" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">What Happens After You Apply</h2>
+            <p class="section-subtitle">We ensure full transparency throughout the hiring process, from initial engagement to final offer.</p>
+            <div class="process-flow-image">
+                <picture>
+                    <source srcset="assets/flow2.png" media="(max-width: 576px)">
+                    <img src="assets/flow.png" alt="Application process flow" style="width:100%;height:auto;display:block;">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    
+ <section id="contact" class="contact section-padding">
+        <div class="container">
+            <h2 class="section-title contact-heading animate-from-bottom">Let's Write Your Next Worktale</h2>
+            <div class="contact-card">
+                <div class="contact-info-pane animate-from-left">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p>Georges Katroux Street, Badaro Beirut, Lebanon</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <p>info@worktales.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <p>+961 81 850 817</p>
+                        </div>
+                    </div>
+                    <div class="contact-shapes">
+                        <img src="assets/c.png" alt="" aria-hidden="true">
+                    </div>
+                </div>
+                <div class="contact-form-pane animate-from-right">
+                    <h3>Send us a Message</h3>
+                    <form class="contact-form">
+                        <div class="contact-row">
+                            <div class="form-group">
+                                <label for="name" class="sr-only">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="sr-only">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                            </div>
+                        </div>
+                            <div class="form-group">
+                                <label for="subject" class="sr-only">Subject</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Subject</option>
+                                    <option value="network">Talent hiring inquiry</option>
+                                    <option value="roles">Remote team setup</option>
+                                    <option value="general">Employment and compliance</option>
+                                    <option value="partnership">Partnership opportunity</option>
+                                    <option value="pricing">Talent community registration</option>
+                                    <option value="sourcing">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="sr-only">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Message" required></textarea>
+                            </div>
+                        <button type="submit" class="btn btn-primary contact-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+            <div class="footer-content">
+                <div class="footer-section animate-from-bottom">
+                    <img src="assets/worktales.png" alt="Worktales" class="footer-logo-img">
+                    <p>&copy; 2026 Worktales. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/worktalesofficial/"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61585264022723#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/worktales.official?igsh=d3pieW9veHJmMXVx"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+            
+        </div>
+</footer>
+    <script src="script.js" defer></script>
+</body>
+</html>
