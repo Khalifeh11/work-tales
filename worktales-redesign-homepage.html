@@ -411,8 +411,18 @@ img { max-width: 100%; display: block; }
   font-size: clamp(1rem, 1.2vw, 1.1rem);
   color: var(--text-secondary);
   max-width: 580px;
-  margin: 0 0 36px;
+  margin: 0 0 24px;
   line-height: 1.65;
+}
+.hero-tagline {
+  font-size: clamp(0.92rem, 1.1vw, 1.02rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin: 0 0 32px;
+  max-width: 580px;
+  line-height: 1.4;
 }
 
 .hero-ctas {
@@ -662,6 +672,14 @@ img { max-width: 100%; display: block; }
   color: var(--text);
   letter-spacing: -0.01em;
 }
+.outcomes-qualifier {
+  margin: 14px auto 0;
+  max-width: 540px;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.5;
+}
 
 .outcomes-grid {
   display: grid;
@@ -810,7 +828,14 @@ img { max-width: 100%; display: block; }
   display: flex; align-items: center; gap: 10px;
   font-weight: 800; letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 14px;
+  margin-bottom: 6px;
+}
+.footer-brand .tagline {
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin: 0 0 16px;
 }
 .footer-brand p {
   color: var(--text-secondary);
@@ -957,7 +982,7 @@ img { max-width: 100%; display: block; }
   <div class="container">
     <div class="hero-inner">
       <div class="hero-copy">
-        <span class="hero-eyebrow"><span class="pulse"></span> Workforce consultancy · Beirut &amp; abroad</span>
+        <span class="hero-eyebrow"><span class="pulse"></span> Built in Beirut · Designed for global execution</span>
         <h1 class="hero-title">
           People decisions are the <span class="em">real risk</span> in business.
         </h1>
@@ -965,6 +990,7 @@ img { max-width: 100%; display: block; }
           Strategy looks good on paper. Execution depends on the people behind it.
           Worktales helps organizations hire, develop, and align the talent that turns ambition into outcomes — across three connected pillars.
         </p>
+        <p class="hero-tagline">Strategy sets the board. The right people win the game.</p>
 
         <div class="hero-ctas">
           <a href="#" class="btn btn-primary">Hire with us <i class="fas fa-arrow-right"></i></a>
@@ -978,8 +1004,8 @@ img { max-width: 100%; display: block; }
             <div class="lbl">Integrated pillars</div>
           </div>
           <div class="hero-meta-item">
-            <div class="num">12+</div>
-            <div class="lbl">Industries served</div>
+            <div class="num"><i class="fas fa-certificate" style="color:var(--accent); font-size:1.2rem;"></i></div>
+            <div class="lbl">Insights Discovery Partner</div>
           </div>
           <div class="hero-meta-item">
             <div class="num">90%</div>
@@ -1074,8 +1100,9 @@ img { max-width: 100%; display: block; }
 <section class="outcomes section-padding">
   <div class="container outcomes-inner">
     <div class="outcomes-head">
-      <div class="section-title">Outcomes</div>
+      <div class="section-title">Outcomes that matter to executives</div>
       <h2>The numbers behind the work.</h2>
+      <p class="outcomes-qualifier">These are operating outcomes, not marketing metrics.</p>
     </div>
     <div class="outcomes-grid">
       <div class="outcome">
@@ -1128,8 +1155,6 @@ img { max-width: 100%; display: block; }
           <line x1="20" y1="178" x2="180" y2="178" stroke="rgba(239,80,35,0.4)" stroke-width="1.5"/>
         </svg>
 
-        <div class="why-tags" style="position:absolute; bottom:60px; right:18px; left:auto; width:auto; display:none;"></div>
-
         <div class="why-art-tag"><i class="fas fa-location-dot"></i> Beirut · Lebanon</div>
       </div>
     </div>
@@ -1173,6 +1198,7 @@ img { max-width: 100%; display: block; }
           </span>
           <span><span style="color:var(--text);">Work</span><span style="color:var(--accent);">tales</span></span>
         </div>
+        <p class="tagline">Empowering People. Unlocking Performance.</p>
         <p>
           An integrated workforce consultancy operating across hiring, capability development, and culture &amp; leadership alignment.
         </p>
