@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Worktales — People decisions are the real risk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ============================================================
+   WORKTALES — Redesigned homepage (mockup)
+   Pulls verbatim brand tokens from the existing style.css:
+   - Black background #000
+   - Accent orange #EF5023
+   - Secondary maroon #4A1114
+   - Accent light #B3C9C6
+   - Text #F1F1F2
+   - Montserrat
+   - Pill CTAs (999px), uppercase orange section titles
+   ============================================================ */
+
+:root {
+  --primary: #000000;
+  --secondary: #4A1114;
+  --accent: #EF5023;
+  --accent-2: #FF7A3F;
+  --accent-light: #B3C9C6;
+  --text: #F1F1F2;
+  --text-secondary: #B3C9C6;
+  --muted: #8a8d8f;
+  --surface: rgba(35, 31, 32, 0.82);
+  --surface-strong: rgba(74, 17, 20, 0.85);
+  --surface-muted: rgba(35, 31, 32, 0.55);
+  --border: rgba(241, 241, 242, 0.10);
+  --border-strong: rgba(241, 241, 242, 0.18);
+  --accent-soft: rgba(239, 80, 35, 0.15);
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+*,*::before,*::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  background-color: #000;
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+
+.container {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 120px);
+}
+
+.section-padding { padding: clamp(64px, 9vw, 120px) 0; }
+
+.section-title {
+  margin: 0 auto 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-size: clamp(0.78rem, 1.05vw, 0.95rem);
+  font-weight: 700;
+}
+
+.section-headline {
+  margin: 0 auto 3rem;
+  text-align: center;
+  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  max-width: 820px;
+  line-height: 1.2;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.btn-primary:hover { background: #ff6638; border-color: #ff6638; transform: translateY(-1px); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(241,241,242,0.30);
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.btn-link i { transition: transform .25s ease; }
+.btn-link:hover i { transform: translateX(4px); }
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+.header {
+  position: fixed; top: 0; left: 0; width: 100%;
+  z-index: 1000;
+  background: rgba(12,10,10,0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 14px 0;
+  border-bottom: 1px solid transparent;
+  transition: background .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.header.scrolled {
+  background: rgba(20,16,16,0.85);
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.32);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.nav-logo a {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; font-size: 1.15rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.nav-logo .mark {
+  width: 28px; height: 28px;
+  background: var(--accent);
+  border-radius: 6px;
+  display: grid; place-items: center;
+  color: #fff; font-size: 0.85rem;
+  box-shadow: 0 0 18px rgba(239,80,35,0.45);
+}
+.nav-logo .word { color: var(--text); }
+.nav-logo .dot { color: var(--accent); }
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 6px;
+  margin: 0; padding: 0;
+}
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: color .25s ease, background .25s ease;
+}
+.nav-link:hover { color: var(--accent); }
+.nav-link i.chev { font-size: 0.7rem; transition: transform .25s ease; }
+
+.nav-cta {
+  padding: 9px 20px;
+  background: var(--accent);
+  color: #fff !important;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-left: 8px;
+  transition: transform .2s ease, background .2s ease;
+}
+.nav-cta:hover { background: #ff6638; transform: translateY(-1px); }
+
+/* Dropdown */
+.has-dropdown { position: relative; }
+.dropdown {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  min-width: 320px;
+  background: rgba(18,14,14,0.96);
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease, visibility .25s;
+}
+.dropdown::before {
+  content: '';
+  position: absolute; top: -6px; left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px; height: 12px;
+  background: rgba(18,14,14,0.96);
+  border-left: 1px solid var(--border-strong);
+  border-top: 1px solid var(--border-strong);
+}
+.has-dropdown.open .dropdown,
+.has-dropdown:hover .dropdown {
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.has-dropdown.open .nav-link i.chev,
+.has-dropdown:hover .nav-link i.chev { transform: rotate(180deg); }
+
+.dropdown-item {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 12px;
+  padding: 12px 12px;
+  border-radius: 10px;
+  align-items: start;
+  transition: background .2s ease;
+}
+.dropdown-item:hover { background: rgba(239,80,35,0.08); }
+.dropdown-item .ico {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: rgba(239,80,35,0.15);
+  display: grid; place-items: center;
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+.dropdown-item .label { font-weight: 600; font-size: 0.92rem; color: var(--text); }
+.dropdown-item .desc { font-size: 0.78rem; color: var(--text-secondary); margin-top: 2px; line-height: 1.45; }
+
+.dropdown-divider {
+  height: 1px; background: var(--border); margin: 6px 4px;
+}
+
+/* Mobile nav */
+.nav-toggle {
+  display: none;
+  background: transparent; border: none;
+  cursor: pointer; padding: 8px;
+  flex-direction: column; gap: 5px;
+}
+.nav-toggle span {
+  width: 26px; height: 2px; background: var(--text); border-radius: 2px;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 980px) {
+  .nav-toggle { display: flex; }
+  .nav-menu {
+    position: fixed;
+    top: 64px; right: 0; left: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 16px clamp(20px, 5vw, 60px) 32px;
+    background: rgba(12,10,10,0.98);
+    backdrop-filter: blur(14px);
+    border-top: 1px solid var(--border);
+    transform: translateY(-12px);
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease, visibility .25s;
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+  }
+  .nav-menu.open {
+    opacity: 1; visibility: visible; pointer-events: auto;
+    transform: translateY(0);
+  }
+  .nav-menu li { width: 100%; }
+  .nav-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 14px 4px;
+    border-radius: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-cta { margin: 16px 0 0; justify-content: center; padding: 14px; }
+  .has-dropdown .dropdown {
+    position: static;
+    opacity: 1; visibility: visible; pointer-events: auto;
+    transform: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 6px 0 0;
+    min-width: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease;
+  }
+  .dropdown::before { display: none; }
+  .has-dropdown.open .dropdown { max-height: 600px; }
+  .dropdown-item { padding: 10px 4px; }
+  .dropdown-item .ico { width: 30px; height: 30px; font-size: 0.85rem; }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 140px 0 80px;
+  display: flex; align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: -2;
+  background:
+    radial-gradient(900px 600px at 15% 25%, rgba(239,80,35,0.18), transparent 60%),
+    radial-gradient(700px 500px at 85% 70%, rgba(74,17,20,0.55), transparent 60%),
+    linear-gradient(180deg, #050505 0%, #000 60%);
+}
+.hero-grid-bg {
+  position: absolute; inset: 0; z-index: -1;
+  background-image:
+    linear-gradient(rgba(239,80,35,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239,80,35,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 80%);
+  opacity: 0.55;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+.hero-copy { min-width: 0; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: rgba(255,255,255,0.03);
+  font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+.hero-eyebrow .pulse {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(239,80,35,0.7);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239,80,35,0.6); }
+  70% { box-shadow: 0 0 0 12px rgba(239,80,35,0); }
+  100% { box-shadow: 0 0 0 0 rgba(239,80,35,0); }
+}
+
+.hero-title {
+  font-size: clamp(2.1rem, 5.2vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 24px;
+}
+.hero-title .accent { color: var(--accent); }
+.hero-title .em {
+  display: inline;
+  background: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin: 0 0 36px;
+  line-height: 1.65;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+.hero-meta {
+  display: flex; gap: 36px; flex-wrap: wrap;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+  max-width: 560px;
+}
+.hero-meta-item .num {
+  font-size: 1.5rem; font-weight: 700; color: var(--text);
+  letter-spacing: -0.02em;
+}
+.hero-meta-item .lbl {
+  font-size: 0.72rem; color: var(--text-secondary);
+  text-transform: uppercase; letter-spacing: 0.12em;
+  margin-top: 2px;
+}
+
+/* Hero visual — abstract three-pillar emblem
+   Robust sizing: width fills column up to a max, square via padding-bottom
+   trick (more reliable than aspect-ratio inside flexible grid tracks).
+   All children are absolutely positioned so they're constrained to .hero-visual. */
+.hero-visual {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  justify-self: center;
+  min-width: 0;
+}
+.hero-visual::before {
+  content: '';
+  display: block;
+  padding-bottom: 100%; /* square */
+}
+.hero-orbit {
+  position: absolute; inset: 0;
+  border: 1px dashed rgba(239,80,35,0.18);
+  border-radius: 50%;
+  animation: spin 80s linear infinite;
+  pointer-events: none;
+}
+.hero-orbit.inner { inset: 12%; border-color: rgba(179,201,198,0.12); animation-duration: 60s; animation-direction: reverse;}
+.hero-orbit.outer { inset: -6%; border-color: rgba(239,80,35,0.10); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.hero-core {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ff8b5a 0%, var(--accent) 35%, var(--secondary) 80%, #1a0707 100%);
+  box-shadow: 0 0 80px rgba(239,80,35,0.45), inset 0 0 30px rgba(0,0,0,0.4);
+}
+.hero-core::after {
+  content: '';
+  position: absolute; inset: 8%;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.hero-node {
+  position: absolute;
+  width: 86px;
+  padding: 9px 10px;
+  text-align: center;
+  background: rgba(18,14,14,0.92);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+.hero-node .pillar-num {
+  display: block;
+  font-size: 0.6rem;
+  color: var(--accent);
+  margin-bottom: 4px;
+  letter-spacing: 0.08em;
+}
+/* Anchor each node by its center so percent offsets stay inside the box. */
+.hero-node.h1 { top: 8%;   left: 50%; transform: translate(-50%, 0); }
+.hero-node.h2 { bottom: 8%; left: 18%; transform: translate(-50%, 0); }
+.hero-node.h3 { bottom: 8%; left: 82%; transform: translate(-50%, 0); }
+
+/* ============================================================
+   PILLARS — Three-pillar overview
+   ============================================================ */
+.pillars {
+  position: relative;
+  background: linear-gradient(180deg, #000 0%, #060404 50%, #000 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.pillars-intro {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: end;
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.pillars-intro h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.pillars-intro h2 .accent { color: var(--accent); }
+.pillars-intro p {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.pillar-card {
+  position: relative;
+  padding: 32px 28px 28px;
+  border: 1px solid var(--border-strong);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(35,31,32,0.4) 0%, rgba(0,0,0,0.6) 100%);
+  overflow: hidden;
+  transition: transform .35s ease, border-color .35s ease, background .35s ease;
+}
+.pillar-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(400px 200px at 0% 0%, rgba(239,80,35,0.12), transparent 60%);
+  opacity: 0; transition: opacity .35s ease;
+  pointer-events: none;
+}
+.pillar-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(239,80,35,0.55);
+}
+.pillar-card:hover::before { opacity: 1; }
+
+.pillar-num {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.pillar-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+.pillar-subtitle {
+  font-size: 0.78rem;
+  color: var(--accent-light);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 18px;
+}
+.pillar-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0 0 24px;
+  min-height: 120px;
+}
+.pillar-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.pillar-features li {
+  font-size: 0.82rem;
+  color: var(--text);
+  padding-left: 22px;
+  position: relative;
+}
+.pillar-features li::before {
+  content: '';
+  position: absolute; left: 0; top: 8px;
+  width: 12px; height: 1.5px;
+  background: var(--accent);
+}
+.pillar-link {
+  display: inline-flex;
+  align-items: center; gap: 8px;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  width: 100%;
+  transition: color .25s ease;
+}
+.pillar-link i { transition: transform .25s ease; color: var(--accent); }
+.pillar-card:hover .pillar-link { color: var(--accent); }
+.pillar-card:hover .pillar-link i { transform: translateX(4px); }
+
+/* ============================================================
+   OUTCOMES BAND
+   ============================================================ */
+.outcomes {
+  background: linear-gradient(135deg, var(--secondary) 0%, #2a0a0c 50%, #050202 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.outcomes::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(800px 300px at 50% 0%, rgba(239,80,35,0.18), transparent 60%);
+  pointer-events: none;
+}
+.outcomes-inner { position: relative; }
+
+.outcomes-head { text-align: center; margin-bottom: clamp(36px, 4vw, 56px); }
+.outcomes-head h2 {
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 700;
+  margin: 8px 0 0;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+.outcome {
+  padding: clamp(28px, 4vw, 44px) 24px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.10);
+  position: relative;
+}
+.outcome:last-child { border-right: none; }
+.outcome .big {
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  background: linear-gradient(180deg, #ffffff 0%, #f0c0a8 70%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.outcome .lbl {
+  margin-top: 14px;
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   WHY LEBANON (compressed teaser)
+   ============================================================ */
+.why-lebanon {
+  position: relative;
+}
+.why-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: clamp(36px, 6vw, 72px);
+  align-items: center;
+}
+.why-copy h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 700;
+  margin: 12px 0 18px;
+  letter-spacing: -0.01em;
+}
+.why-copy p {
+  color: var(--text-secondary);
+  margin: 0 0 26px;
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 480px;
+}
+.why-tags {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+}
+.why-tag {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--border-strong);
+  background: rgba(35,31,32,0.45);
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+.why-tag i { color: var(--accent); font-size: 0.95rem; }
+
+/* Cedar / map flourish */
+.why-art {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  background:
+    radial-gradient(circle at 65% 50%, rgba(239,80,35,0.18), transparent 55%),
+    linear-gradient(135deg, #0c0808 0%, #1a0d0d 100%);
+  display: grid; place-items: center;
+}
+.why-art svg { width: 65%; height: auto; opacity: 0.92; }
+.why-art-tag {
+  position: absolute;
+  bottom: 18px; left: 18px;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  backdrop-filter: blur(8px);
+}
+.why-art-tag i { color: var(--accent); }
+
+/* ============================================================
+   CLOSING CTA
+   ============================================================ */
+.cta-band {
+  background: #000;
+  border-top: 1px solid var(--border);
+  padding: clamp(64px, 8vw, 100px) 0;
+  text-align: center;
+}
+.cta-band h2 {
+  font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+.cta-band h2 .accent { color: var(--accent); }
+.cta-band p {
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin: 0 auto 32px;
+  font-size: 1.02rem;
+}
+.cta-band .btns {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: #050303;
+  border-top: 1px solid var(--border);
+  padding: 64px 0 28px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+.footer-brand .logo-row {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.footer-brand p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  max-width: 320px;
+  margin: 0 0 18px;
+  line-height: 1.65;
+}
+.footer-social { display: flex; gap: 10px; }
+.footer-social a {
+  width: 36px; height: 36px;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.footer-social a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.footer-col h4 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin: 0 0 18px;
+}
+.footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  transition: color .2s ease;
+}
+.footer-col a:hover { color: var(--accent); }
+
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 980px) {
+  .hero { min-height: auto; padding: 120px 0 60px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-visual { max-width: 360px; margin: 0 auto; }
+  .pillars-intro { grid-template-columns: 1fr; gap: 16px; align-items: start; }
+  .pillar-grid { grid-template-columns: 1fr; }
+  .pillar-desc { min-height: 0; }
+  .outcomes-grid { grid-template-columns: repeat(2, 1fr); }
+  .outcome:nth-child(2) { border-right: none; }
+  .outcome:nth-child(1), .outcome:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.10); }
+  .why-inner { grid-template-columns: 1fr; gap: 40px; }
+  .why-art { order: -1; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .outcomes-grid { grid-template-columns: 1fr; }
+  .outcome { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.10); }
+  .outcome:last-child { border-bottom: none; }
+  .why-tags { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .hero-meta { gap: 24px; }
+  .hero-node { width: 78px; font-size: 0.62rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER / NAV
+     ============================================================ -->
+<header class="header" id="siteHeader">
+  <nav class="nav container" aria-label="Primary">
+    <div class="nav-logo">
+      <a href="#home" aria-label="Worktales home">
+        <span class="mark"><i class="fas fa-mountain"></i></span>
+        <span><span class="word">Work</span><span class="dot">tales</span></span>
+      </a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-menu" id="navMenu">
+      <li class="has-dropdown" id="servicesDd">
+        <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+          Services <i class="fas fa-chevron-down chev"></i>
+        </a>
+        <div class="dropdown" role="menu">
+          <a class="dropdown-item" href="#" role="menuitem">
+            <span class="ico"><i class="fas fa-user-tie"></i></span>
+            <span>
+              <span class="label">Talent Solutions</span>
+              <span class="desc">Precision hiring, dedicated teams, employer-of-record.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="#" role="menuitem">
+            <span class="ico"><i class="fas fa-graduation-cap"></i></span>
+            <span>
+              <span class="label">Training &amp; Development</span>
+              <span class="desc">Sales, leadership, AI readiness, communication programs.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="#" role="menuitem">
+            <span class="ico"><i class="fas fa-users-line"></i></span>
+            <span>
+              <span class="label">Culture &amp; Leadership</span>
+              <span class="desc">Team effectiveness, leadership alignment, Insights Discovery.</span>
+            </span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" role="menuitem">
+            <span class="ico"><i class="fas fa-compass"></i></span>
+            <span>
+              <span class="label">For Talent</span>
+              <span class="desc">Opportunities and our talent community.</span>
+            </span>
+          </a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="#">About</a></li>
+      <li><a class="nav-link" href="#">Insights</a></li>
+      <li><a class="nav-cta" href="#contact">Schedule a call</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-bg"></div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="hero-eyebrow"><span class="pulse"></span> Workforce consultancy · Beirut &amp; abroad</span>
+        <h1 class="hero-title">
+          People decisions are the <span class="em">real risk</span> in business.
+        </h1>
+        <p class="hero-sub">
+          Strategy looks good on paper. Execution depends on the people behind it.
+          Worktales helps organizations hire, develop, and align the talent that turns ambition into outcomes — across three connected pillars.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#" class="btn btn-primary">Hire with us <i class="fas fa-arrow-right"></i></a>
+          <a href="#" class="btn btn-ghost">Train your team</a>
+          <a href="#" class="btn btn-ghost">For talent</a>
+        </div>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <div class="num">3</div>
+            <div class="lbl">Integrated pillars</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="num">12+</div>
+            <div class="lbl">Industries served</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="num">90%</div>
+            <div class="lbl">Client satisfaction</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-orbit outer"></div>
+        <div class="hero-orbit"></div>
+        <div class="hero-orbit inner"></div>
+        <div class="hero-core"></div>
+        <div class="hero-node h1"><span class="pillar-num">01 Hire</span>Talent</div>
+        <div class="hero-node h2"><span class="pillar-num">02 Build</span>Training</div>
+        <div class="hero-node h3"><span class="pillar-num">03 Connect</span>Culture</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THREE-PILLAR SERVICES OVERVIEW
+     ============================================================ -->
+<section class="pillars section-padding" id="services">
+  <div class="container">
+    <div class="pillars-intro">
+      <div>
+        <div class="section-title">How we work</div>
+        <h2>One consultancy, <span class="accent">three pillars</span>, one outcome: people who deliver.</h2>
+      </div>
+      <p>
+        We work closely with your leadership to understand how your organization operates, how decisions are made, and what success looks like. Then we deliver across hiring, capability development, and culture &mdash; so the talent you bring in, the skills you build, and the way your teams work together all point in the same direction.
+      </p>
+    </div>
+
+    <div class="pillar-grid">
+      <article class="pillar-card">
+        <span class="pillar-num">01 / Hire</span>
+        <h3 class="pillar-name">Talent Solutions</h3>
+        <div class="pillar-subtitle">Precision hiring &amp; teams</div>
+        <p class="pillar-desc">
+          Strategic search, dedicated remote teams, and employer-of-record services. We own the full hiring journey so each hire is intentional, culture-aligned, and ready to contribute from day one.
+        </p>
+        <ul class="pillar-features">
+          <li>Executive &amp; specialist search</li>
+          <li>Dedicated remote teams in Lebanon</li>
+          <li>EOR &mdash; no local entity required</li>
+          <li>0% retainer · 90-day replacement</li>
+        </ul>
+        <a href="#" class="pillar-link">Explore Talent Solutions <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <article class="pillar-card">
+        <span class="pillar-num">02 / Build</span>
+        <h3 class="pillar-name">Training &amp; Development</h3>
+        <div class="pillar-subtitle">Skills that move the business</div>
+        <p class="pillar-desc">
+          Tailored programs in sales performance, leadership, AI readiness, organizational execution, and communication &mdash; designed around the real capability gaps slowing your teams down.
+        </p>
+        <ul class="pillar-features">
+          <li>Sales &amp; commercial effectiveness</li>
+          <li>AI / technology &amp; future skills</li>
+          <li>Leadership &amp; execution</li>
+          <li>Workshops · certificates · diplomas</li>
+        </ul>
+        <a href="#" class="pillar-link">Explore Training &amp; Development <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <article class="pillar-card">
+        <span class="pillar-num">03 / Connect</span>
+        <h3 class="pillar-name">Culture &amp; Leadership</h3>
+        <div class="pillar-subtitle">Teams that work together</div>
+        <p class="pillar-desc">
+          High-performing organizations build culture deliberately. We align leadership, sharpen team dynamics, and run Insights Discovery to make collaboration faster, clearer, and more accountable.
+        </p>
+        <ul class="pillar-features">
+          <li>Team building &amp; effectiveness</li>
+          <li>Leadership alignment</li>
+          <li>Change &amp; sales effectiveness</li>
+          <li>Insights Discovery partner</li>
+        </ul>
+        <a href="#" class="pillar-link">Explore Culture &amp; Leadership <i class="fas fa-arrow-right"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     OUTCOMES BAND
+     ============================================================ -->
+<section class="outcomes section-padding">
+  <div class="container outcomes-inner">
+    <div class="outcomes-head">
+      <div class="section-title">Outcomes</div>
+      <h2>The numbers behind the work.</h2>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcome">
+        <div class="big">90%</div>
+        <div class="lbl">Client satisfaction</div>
+      </div>
+      <div class="outcome">
+        <div class="big">65%</div>
+        <div class="lbl">Reduction in hiring cost</div>
+      </div>
+      <div class="outcome">
+        <div class="big">92%</div>
+        <div class="lbl">Retention at 12 months</div>
+      </div>
+      <div class="outcome">
+        <div class="big">&lt;2&nbsp;wks</div>
+        <div class="lbl">Talent ready to onboard</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY LEBANON (compressed teaser)
+     ============================================================ -->
+<section class="why-lebanon section-padding" id="why-lebanon">
+  <div class="container">
+    <div class="why-inner">
+      <div class="why-copy">
+        <div class="section-title">Why Lebanon</div>
+        <h2>A talent pool that punches above its weight.</h2>
+        <p>
+          For Talent Solutions and remote teams, Lebanon offers a rare mix &mdash; rigorous education, multilingual fluency, international experience, and competitive economics. Relevant when you hire here; not the whole story when you don&rsquo;t.
+        </p>
+        <a href="#" class="btn-link">Read the full Lebanon brief <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="why-art" aria-hidden="true">
+        <!-- Stylized cedar mark (placeholder for current cedar.png asset) -->
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lebanese cedar">
+          <defs>
+            <linearGradient id="cedG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#EF5023"/>
+              <stop offset="100%" stop-color="#4A1114"/>
+            </linearGradient>
+          </defs>
+          <path d="M100 18 L60 70 L82 70 L48 110 L78 110 L36 150 L168 150 L122 110 L155 110 L120 70 L142 70 Z"
+                fill="url(#cedG)" opacity="0.95"/>
+          <rect x="92" y="150" width="16" height="28" fill="#4A1114"/>
+          <line x1="20" y1="178" x2="180" y2="178" stroke="rgba(239,80,35,0.4)" stroke-width="1.5"/>
+        </svg>
+
+        <div class="why-tags" style="position:absolute; bottom:60px; right:18px; left:auto; width:auto; display:none;"></div>
+
+        <div class="why-art-tag"><i class="fas fa-location-dot"></i> Beirut · Lebanon</div>
+      </div>
+    </div>
+
+    <div class="why-tags" style="margin-top: 36px;">
+      <div class="why-tag"><i class="fas fa-graduation-cap"></i> Strong, internationally accredited education</div>
+      <div class="why-tag"><i class="fas fa-language"></i> Professional English &amp; French fluency</div>
+      <div class="why-tag"><i class="fas fa-globe"></i> Proven on global &amp; remote teams</div>
+      <div class="why-tag"><i class="fas fa-chart-line"></i> Competitive cost, high-value delivery</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CLOSING CTA
+     ============================================================ -->
+<section class="cta-band" id="contact">
+  <div class="container">
+    <div class="section-title">Let&rsquo;s talk</div>
+    <h2>Let&rsquo;s write your next <span class="accent">worktale</span>.</h2>
+    <p>
+      Whether you&rsquo;re hiring, building capability, or aligning your leadership team &mdash; start with a conversation. We&rsquo;ll listen first, then propose.
+    </p>
+    <div class="btns">
+      <a href="#" class="btn btn-primary">Schedule a call <i class="fas fa-arrow-right"></i></a>
+      <a href="#" class="btn btn-ghost">Request a brochure</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-row">
+          <span style="width:24px;height:24px;background:var(--accent);border-radius:5px;display:inline-grid;place-items:center;color:#fff;font-size:0.7rem;">
+            <i class="fas fa-mountain"></i>
+          </span>
+          <span><span style="color:var(--text);">Work</span><span style="color:var(--accent);">tales</span></span>
+        </div>
+        <p>
+          An integrated workforce consultancy operating across hiring, capability development, and culture &amp; leadership alignment.
+        </p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Talent Solutions</a></li>
+          <li><a href="#">Training &amp; Development</a></li>
+          <li><a href="#">Culture &amp; Leadership</a></li>
+          <li><a href="#">For Talent</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Insights</a></li>
+          <li><a href="#">Why Lebanon</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#"><i class="fas fa-map-marker-alt" style="color:var(--accent); margin-right:6px;"></i> Khanamerian Bldg, 5th Fl, Badaro · Beirut</a></li>
+          <li><a href="mailto:info@worktales.com"><i class="fas fa-envelope" style="color:var(--accent); margin-right:6px;"></i> info@worktales.com</a></li>
+          <li><a href="tel:+96181850817"><i class="fas fa-phone" style="color:var(--accent); margin-right:6px;"></i> +961 81 850 817</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Worktales. All rights reserved.</span>
+      <span>Mockup &middot; redesigned homepage preview</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Header shadow on scroll
+  const header = document.getElementById('siteHeader');
+  const onScroll = () => {
+    if (window.scrollY > 24) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  navToggle.addEventListener('click', () => {
+    const open = navMenu.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  // Services dropdown — click on mobile, hover on desktop (CSS handles hover)
+  const dd = document.getElementById('servicesDd');
+  const ddLink = dd.querySelector('.nav-link');
+  ddLink.addEventListener('click', (e) => {
+    if (window.matchMedia('(max-width: 980px)').matches) {
+      e.preventDefault();
+      const open = dd.classList.toggle('open');
+      ddLink.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+  });
+
+  // Close mobile menu on link tap inside dropdown
+  dd.querySelectorAll('.dropdown-item').forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.matchMedia('(max-width: 980px)').matches) {
+        navMenu.classList.remove('open');
+        navToggle.classList.remove('open');
+        dd.classList.remove('open');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
