@@ -432,19 +432,35 @@ img { max-width: 100%; display: block; }
   margin-bottom: 36px;
 }
 .hero-meta {
-  display: flex; gap: 36px; flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: clamp(40px, 6vw, 64px);
   padding-top: 28px;
   border-top: 1px solid var(--border);
-  max-width: 560px;
+}
+.hero-meta-item {
+  text-align: center;
+  padding: 0 12px;
+  position: relative;
+}
+.hero-meta-item + .hero-meta-item::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10%;
+  width: 1px; height: 80%;
+  background: var(--border);
 }
 .hero-meta-item .num {
-  font-size: 1.5rem; font-weight: 700; color: var(--text);
+  font-size: 1.6rem; font-weight: 700; color: var(--text);
   letter-spacing: -0.02em;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 1.8rem;
 }
 .hero-meta-item .lbl {
-  font-size: 0.72rem; color: var(--text-secondary);
+  font-size: 0.74rem; color: var(--text-secondary);
   text-transform: uppercase; letter-spacing: 0.12em;
-  margin-top: 2px;
+  margin-top: 6px;
 }
 
 /* Hero visual — abstract three-pillar emblem
@@ -905,7 +921,8 @@ img { max-width: 100%; display: block; }
   .outcome:last-child { border-bottom: none; }
   .why-tags { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-  .hero-meta { gap: 24px; }
+  .hero-meta { grid-template-columns: 1fr; gap: 18px; }
+  .hero-meta-item + .hero-meta-item::before { display: none; }
   .hero-node { width: 78px; font-size: 0.62rem; }
 }
 </style>
@@ -997,21 +1014,6 @@ img { max-width: 100%; display: block; }
           <a href="#" class="btn btn-ghost">Train your team</a>
           <a href="#" class="btn btn-ghost">For talent</a>
         </div>
-
-        <div class="hero-meta">
-          <div class="hero-meta-item">
-            <div class="num">3</div>
-            <div class="lbl">Integrated pillars</div>
-          </div>
-          <div class="hero-meta-item">
-            <div class="num"><i class="fas fa-certificate" style="color:var(--accent); font-size:1.2rem;"></i></div>
-            <div class="lbl">Insights Discovery Partner</div>
-          </div>
-          <div class="hero-meta-item">
-            <div class="num">90%</div>
-            <div class="lbl">Client satisfaction</div>
-          </div>
-        </div>
       </div>
 
       <div class="hero-visual" aria-hidden="true">
@@ -1022,6 +1024,21 @@ img { max-width: 100%; display: block; }
         <div class="hero-node h1"><span class="pillar-num">01 Hire</span>Talent</div>
         <div class="hero-node h2"><span class="pillar-num">02 Build</span>Training</div>
         <div class="hero-node h3"><span class="pillar-num">03 Connect</span>Culture</div>
+      </div>
+    </div>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="num">3</div>
+        <div class="lbl">Integrated pillars</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="num"><i class="fas fa-certificate" style="color:var(--accent); font-size:1.2rem;"></i></div>
+        <div class="lbl">Insights Discovery Partner</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="num">90%</div>
+        <div class="lbl">Client satisfaction</div>
       </div>
     </div>
   </div>
