@@ -2411,7 +2411,7 @@ content: none;
 }
 
 .hex-tooltip-left {
- --tip-offset: calc(-60% - 6px);
+ --tip-offset: calc(-20% - 6px);
  right: 50%;
  text-align: center;
 }
@@ -2431,9 +2431,19 @@ right: 12px;
  text-align: center;
 }
 
+.why-hex-1 .hex-tooltip {
+    top: -15%;
+}
+
 /* Bring timezone message closer to center */
 .why-hex-3 .hex-tooltip {
-    --tip-offset: calc(40% + 6px);
+    --tip-offset: calc(-5% + 6px);
+    top: -40%;
+}
+
+.why-hex-4 .hex-tooltip {
+    --tip-offset: calc(25% + 6px);
+    top: 96%;
 }
 
 .hex-tooltip-right::after {
