@@ -1,0 +1,5 @@
+# Playwright CLI artifacts
+.playwright-cli/
+
+# Screenshot artifacts
+hex-*.png
