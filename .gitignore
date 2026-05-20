@@ -3,3 +3,6 @@
 
 # Screenshot artifacts
 hex-*.png
+
+# folders to ignore
+/plan/
