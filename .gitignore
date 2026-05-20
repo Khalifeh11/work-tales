@@ -5,4 +5,5 @@
 hex-*.png
 
 # folders to ignore
-/plan/
+/files_to_ignore/
+
