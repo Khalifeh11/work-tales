@@ -482,13 +482,13 @@ img { max-width: 100%; display: block; }
 }
 .hero-orbit {
   position: absolute; inset: 0;
-  border: 1px dashed rgba(239,80,35,0.18);
+  border: 1.5px dashed rgba(239,80,35,0.55);
   border-radius: 50%;
   animation: spin 80s linear infinite;
   pointer-events: none;
 }
-.hero-orbit.inner { inset: 12%; border-color: rgba(179,201,198,0.12); animation-duration: 60s; animation-direction: reverse;}
-.hero-orbit.outer { inset: -6%; border-color: rgba(239,80,35,0.10); }
+.hero-orbit.inner { inset: 12%; border-style: solid; border-color: rgba(179,201,198,0.35); animation-duration: 60s; animation-direction: reverse;}
+.hero-orbit.outer { inset: -6%; border-color: rgba(239,80,35,0.30); }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 .hero-core {
