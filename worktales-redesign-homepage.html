@@ -663,24 +663,10 @@ img { max-width: 100%; display: block; }
 /* ============================================================
    OUTCOMES BAND
    ============================================================ */
-.outcomes {
-  background: linear-gradient(135deg, var(--secondary) 0%, #2a0a0c 50%, #050202 100%);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  position: relative;
-  overflow: hidden;
-}
-.outcomes::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(800px 300px at 50% 0%, rgba(239,80,35,0.18), transparent 60%);
-  pointer-events: none;
-}
+.outcomes { position: relative; }
 .outcomes-inner { position: relative; }
 
-.outcomes-head { text-align: center; margin-bottom: clamp(36px, 4vw, 56px); }
+.outcomes-head { text-align: left; margin-bottom: clamp(36px, 4vw, 56px); }
 .outcomes-head h2 {
   font-size: clamp(1.5rem, 2.6vw, 2.1rem);
   font-weight: 500;
@@ -688,26 +674,18 @@ img { max-width: 100%; display: block; }
   color: var(--text);
   letter-spacing: -0.015em;
 }
-.outcomes-qualifier {
-  margin: 14px auto 0;
-  max-width: 540px;
-  font-size: 0.92rem;
-  color: var(--text-secondary);
-  font-style: italic;
-  line-height: 1.5;
-}
 
 .outcomes-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
-  border-top: 1px solid rgba(255,255,255,0.10);
-  border-bottom: 1px solid rgba(255,255,255,0.10);
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
 }
 .outcome {
   padding: clamp(28px, 4vw, 44px) 24px;
   text-align: center;
-  border-right: 1px solid rgba(255,255,255,0.10);
+  border-right: 1px solid var(--border-strong);
   position: relative;
 }
 .outcome:last-child { border-right: none; }
@@ -716,13 +694,16 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.03em;
-  background: linear-gradient(180deg, #ffffff 0%, #f0c0a8 70%, var(--accent) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--text);
+}
+.outcome .rule {
+  width: 32px;
+  height: 2px;
+  background: var(--accent);
+  margin: 16px auto 0;
 }
 .outcome .lbl {
-  margin-top: 14px;
+  margin-top: 12px;
   font-size: 0.84rem;
   color: var(--text-secondary);
   letter-spacing: 0.06em;
@@ -910,14 +891,14 @@ img { max-width: 100%; display: block; }
   .pillar-desc { min-height: 0; }
   .outcomes-grid { grid-template-columns: repeat(2, 1fr); }
   .outcome:nth-child(2) { border-right: none; }
-  .outcome:nth-child(1), .outcome:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.10); }
+  .outcome:nth-child(1), .outcome:nth-child(2) { border-bottom: 1px solid var(--border-strong); }
   .why-inner { grid-template-columns: 1fr; gap: 40px; }
   .why-art { order: -1; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
   .outcomes-grid { grid-template-columns: 1fr; }
-  .outcome { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.10); }
+  .outcome { border-right: none; border-bottom: 1px solid var(--border-strong); }
   .outcome:last-child { border-bottom: none; }
   .why-tags { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -1117,23 +1098,26 @@ img { max-width: 100%; display: block; }
     <div class="outcomes-head">
       <div class="section-title">Outcomes that matter to executives</div>
       <h2>The numbers behind the work.</h2>
-      <p class="outcomes-qualifier">These are operating outcomes, not marketing metrics.</p>
     </div>
     <div class="outcomes-grid">
       <div class="outcome">
         <div class="big">90%</div>
+        <div class="rule" aria-hidden="true"></div>
         <div class="lbl">Client satisfaction</div>
       </div>
       <div class="outcome">
         <div class="big">65%</div>
+        <div class="rule" aria-hidden="true"></div>
         <div class="lbl">Reduction in hiring cost</div>
       </div>
       <div class="outcome">
         <div class="big">92%</div>
+        <div class="rule" aria-hidden="true"></div>
         <div class="lbl">Retention at 12 months</div>
       </div>
       <div class="outcome">
         <div class="big">&lt;2&nbsp;wks</div>
+        <div class="rule" aria-hidden="true"></div>
         <div class="lbl">Talent ready to onboard</div>
       </div>
     </div>
