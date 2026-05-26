@@ -741,6 +741,101 @@ button.nav-link {
 }
 
 /* ============================================================
+   FOR INDIVIDUALS — talent pool + webinars
+   ============================================================ */
+.individuals {
+  position: relative;
+  background: linear-gradient(180deg, #000 0%, #060404 50%, #000 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.indiv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-bottom: clamp(48px, 6vw, 72px);
+}
+.indiv-card {
+  padding: 36px 32px;
+  border: 1px solid var(--border-strong);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(35,31,32,0.4) 0%, rgba(0,0,0,0.6) 100%);
+  display: flex;
+  flex-direction: column;
+}
+.indiv-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+.indiv-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0 0 24px;
+  flex: 1;
+}
+.indiv-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Webinars */
+.webinars-head { margin-bottom: clamp(28px, 3.5vw, 44px); }
+.webinars-head h3 {
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 500;
+  margin: 8px 0 0;
+  letter-spacing: -0.015em;
+}
+.webinar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.webinar-card {
+  position: relative;
+  padding: 28px 26px;
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
+  background: rgba(35,31,32,0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.webinar-date {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 56px; height: 56px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(239,80,35,0.25);
+  color: var(--accent);
+  line-height: 1;
+}
+.webinar-month { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.webinar-day { font-size: 1.3rem; font-weight: 700; margin-top: 3px; }
+.webinar-tag {
+  align-self: flex-start;
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent-light);
+  padding: 4px 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+}
+.webinar-title {
+  font-size: 1.05rem; font-weight: 600;
+  margin: 0; line-height: 1.35; color: var(--text);
+}
+.webinar-meta { font-size: 0.84rem; color: var(--text-secondary); margin: 0; }
+.webinar-register {
+  margin-top: auto;
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em;
+}
+.webinar-register.is-disabled { color: var(--muted); cursor: default; }
+
+/* ============================================================
    CLOSING CTA
    ============================================================ */
 .cta-band {
@@ -776,7 +871,7 @@ button.nav-link {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
   gap: 40px;
   margin-bottom: 48px;
 }
@@ -855,6 +950,8 @@ button.nav-link {
   .outcome:nth-child(2) { border-right: none; }
   .outcome:nth-child(1), .outcome:nth-child(2) { border-bottom: 1px solid var(--border-strong); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .indiv-grid { grid-template-columns: 1fr; }
+  .webinar-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .pillars-intro h2 .nowrap { white-space: normal; }
@@ -865,4 +962,5 @@ button.nav-link {
   .hero-meta { grid-template-columns: 1fr; gap: 18px; }
   .hero-meta-item + .hero-meta-item::before { display: none; }
   .hero-node { width: 78px; font-size: 0.62rem; }
+  .indiv-card { padding: 28px 22px; }
 }
