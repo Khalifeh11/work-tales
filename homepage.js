@@ -18,25 +18,47 @@ navToggle.addEventListener('click', () => {
   navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
 });
 
-// Services dropdown — click on mobile, hover/focus on desktop (CSS handles those)
-const dd = document.getElementById('servicesDd');
-const ddTrigger = dd.querySelector('.nav-link');
-ddTrigger.addEventListener('click', (e) => {
-  if (window.matchMedia('(max-width: 980px)').matches) {
-    e.preventDefault();
-    const open = dd.classList.toggle('open');
-    ddTrigger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  }
-});
+// Dropdowns — click on mobile, hover/focus on desktop (CSS handles those)
+const dropdowns = document.querySelectorAll('.nav-menu .has-dropdown');
+const closeMobileMenu = () => {
+  navMenu.classList.remove('open');
+  navToggle.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  dropdowns.forEach(dd => {
+    dd.classList.remove('open');
+    dd.querySelector('.nav-link')?.setAttribute('aria-expanded', 'false');
+  });
+};
 
-// Close mobile menu on link tap inside dropdown
-dd.querySelectorAll('.dropdown-item').forEach(a => {
-  a.addEventListener('click', () => {
-    if (window.matchMedia('(max-width: 980px)').matches) {
-      navMenu.classList.remove('open');
-      navToggle.classList.remove('open');
-      dd.classList.remove('open');
-    }
+dropdowns.forEach(dd => {
+  const trigger = dd.querySelector('.nav-link');
+  if (!trigger) return;
+
+  trigger.addEventListener('click', (e) => {
+    if (!window.matchMedia('(max-width: 980px)').matches) return;
+    e.preventDefault();
+    const willOpen = !dd.classList.contains('open');
+    // collapse siblings so the stack stays clean
+    dropdowns.forEach(other => {
+      if (other !== dd) {
+        other.classList.remove('open');
+        other.querySelector('.nav-link')?.setAttribute('aria-expanded', 'false');
+      }
+    });
+    dd.classList.toggle('open', willOpen);
+    trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+  });
+
+  dd.querySelectorAll('.dropdown-item').forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.matchMedia('(max-width: 980px)').matches) closeMobileMenu();
+    });
   });
 });
 
+// Close mobile menu on tap of plain nav links (Insights, About, etc.)
+navMenu.querySelectorAll('a.nav-link').forEach(a => {
+  a.addEventListener('click', () => {
+    if (window.matchMedia('(max-width: 980px)').matches) closeMobileMenu();
+  });
+});

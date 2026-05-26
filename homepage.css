@@ -49,7 +49,6 @@ img { max-width: 100%; display: block; }
 
 /* Keyboard focus rings for interactive elements (mouse clicks stay clean) */
 .nav-link:focus-visible,
-.nav-cta:focus-visible,
 .btn:focus-visible,
 .btn-link:focus-visible,
 .dropdown-item:focus-visible,
@@ -200,18 +199,6 @@ button.nav-link {
 .nav-link:hover { color: var(--accent); }
 .nav-link i.chev { font-size: 0.7rem; transition: transform .25s ease; }
 
-.nav-cta {
-  padding: 9px 20px;
-  background: var(--accent);
-  color: #fff !important;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.88rem;
-  margin-left: 8px;
-  transition: transform .2s ease, background .2s ease;
-}
-.nav-cta:hover { background: #ff6638; transform: translateY(-1px); }
-
 /* Dropdown */
 .has-dropdown { position: relative; }
 .dropdown {
@@ -236,6 +223,15 @@ button.nav-link {
   background: rgba(18,14,14,0.96);
   border-left: 1px solid var(--border-strong);
   border-top: 1px solid var(--border-strong);
+}
+/* Invisible hover bridge across the 14px gap between trigger and dropdown,
+   so the dropdown doesn't close while the cursor traverses to it. */
+.dropdown::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  top: -14px;
+  height: 14px;
 }
 .has-dropdown.open .dropdown,
 .has-dropdown:hover .dropdown,
@@ -318,7 +314,6 @@ button.nav-link {
     border-radius: 0;
     border-bottom: 1px solid var(--border);
   }
-  .nav-cta { margin: 16px 0 0; justify-content: center; padding: 14px; }
   .has-dropdown .dropdown {
     position: static;
     opacity: 1; visibility: visible; pointer-events: auto;
@@ -332,7 +327,11 @@ button.nav-link {
     overflow: hidden;
     transition: max-height .35s ease;
   }
-  .dropdown::before { display: none; }
+  .dropdown::before,
+  .dropdown::after { display: none; }
+  .has-dropdown.open .dropdown,
+  .has-dropdown:hover .dropdown,
+  .has-dropdown:focus-within .dropdown { transform: none; }
   .has-dropdown.open .dropdown { max-height: 600px; }
   .dropdown-item { padding: 10px 4px; }
   .dropdown-item .ico { width: 30px; height: 30px; font-size: 0.85rem; }
