@@ -987,3 +987,210 @@ button.nav-link {
   .indiv-card { padding: 28px 22px; }
   .scheduler-frame { height: 620px; }
 }
+
+/* ============================================================
+   DETAIL PAGE (recruitment.html) — header + advantage grid
+   ============================================================ */
+.page-hero {
+  position: relative;
+  padding: clamp(140px, 18vh, 200px) 0 clamp(56px, 8vw, 88px);
+  overflow: hidden;
+  isolation: isolate;
+  border-bottom: 1px solid var(--border);
+}
+.page-hero-inner { max-width: 760px; }
+.page-hero .back {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  transition: color .25s ease;
+}
+.page-hero .back:hover { color: var(--accent); }
+.page-hero .eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.page-hero h1 {
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-weight: 500; line-height: 1.12; letter-spacing: -0.025em;
+  margin: 0 0 20px;
+}
+.page-hero h1 .accent { color: var(--accent); }
+.page-hero .lede {
+  font-size: clamp(1rem, 1.2vw, 1.12rem);
+  color: var(--text-secondary); line-height: 1.65;
+  max-width: 640px; margin: 0 0 28px;
+}
+
+.adv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+.adv-item {
+  padding: 26px 24px;
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
+  background: rgba(35,31,32,0.35);
+}
+.adv-item .adv-ico {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 12px;
+  background: var(--accent-soft); border: 1px solid rgba(239,80,35,0.25);
+  color: var(--accent); font-size: 1.05rem;
+  margin-bottom: 16px;
+}
+.adv-item h3 { font-size: 1.05rem; font-weight: 600; margin: 0 0 8px; letter-spacing: -0.01em; }
+.adv-item p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+
+/* ---- Detail-page hero: split layout + visual card + proof strip ---- */
+.page-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(40px, 6vw, 72px);
+  align-items: center;
+}
+.page-hero-copy { min-width: 0; max-width: 640px; }
+.page-hero .hero-ctas { margin-top: 28px; }
+
+.hire-card {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  padding: 28px 26px;
+  border: 1px solid var(--border-strong);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(35,31,32,0.66) 0%, rgba(10,8,8,0.72) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+  overflow: hidden;
+  isolation: isolate;
+}
+.hire-card-glow {
+  position: absolute; z-index: -1;
+  top: -45%; right: -35%;
+  width: 90%; aspect-ratio: 1 / 1;
+  background: radial-gradient(circle, rgba(239,80,35,0.38), transparent 62%);
+  pointer-events: none;
+}
+.hire-card-head { margin-bottom: 20px; }
+.hire-card-eyebrow {
+  display: block;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 6px;
+}
+.hire-card-title { display: block; font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; color: var(--text); }
+
+.hire-steps { list-style: none; margin: 0 0 20px; padding: 0; }
+.hire-steps li {
+  position: relative;
+  display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: start;
+  padding: 11px 0;
+}
+.hire-steps li:not(:last-child)::before {
+  content: ''; position: absolute; left: 16px; top: 34px; bottom: -5px;
+  width: 2px; background: var(--border-strong);
+}
+.hire-steps li.is-done:not(:last-child)::before { background: rgba(239,80,35,0.5); }
+.step-dot {
+  position: relative; z-index: 1;
+  width: 34px; height: 34px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 0.7rem; color: var(--muted);
+  border: 1px solid var(--border-strong); background: rgba(255,255,255,0.03);
+}
+.is-done .step-dot { background: var(--accent); border-color: var(--accent); color: #fff; }
+.is-active .step-dot { color: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 4px rgba(239,80,35,0.12); }
+.step-body { display: flex; flex-direction: column; }
+.step-name { font-size: 0.95rem; font-weight: 600; color: var(--text); }
+.is-active .step-name { color: var(--accent); }
+.step-note { font-size: 0.76rem; color: var(--text-secondary); margin-top: 2px; }
+
+.hero-proof .num { font-size: 1.35rem; }
+
+/* ---- Guarantee banner (why-hire) ---- */
+.guarantee {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: clamp(18px, 3vw, 32px);
+  padding: clamp(24px, 3vw, 34px) clamp(24px, 3.5vw, 40px);
+  border-radius: 18px;
+  border: 1px solid rgba(239,80,35,0.35);
+  background:
+    radial-gradient(600px 220px at 0% 0%, rgba(239,80,35,0.20), transparent 70%),
+    linear-gradient(120deg, var(--secondary) 0%, #190707 100%);
+}
+.guarantee-ico {
+  flex: none;
+  width: 56px; height: 56px; border-radius: 14px;
+  display: grid; place-items: center;
+  background: var(--accent); color: #fff; font-size: 1.3rem;
+  box-shadow: 0 12px 30px rgba(239,80,35,0.4);
+}
+.guarantee-body h3 { margin: 0 0 4px; font-size: clamp(1.15rem, 2vw, 1.5rem); font-weight: 700; letter-spacing: -0.01em; }
+.guarantee-body p { margin: 0; color: var(--text-secondary); font-size: 0.92rem; max-width: 60ch; }
+.guarantee .btn { white-space: nowrap; }
+
+/* ---- Lebanese advantage: editorial split ---- */
+.lebanon-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+.lebanon-intro { position: relative; isolation: isolate; }
+.lebanon-map {
+  position: absolute; z-index: -1;
+  right: -6%; bottom: -22%;
+  width: min(320px, 78%);
+  height: auto;
+  opacity: 0.38;
+  pointer-events: none;
+}
+.lebanon-intro h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 500; line-height: 1.2; letter-spacing: -0.015em;
+  margin: 0 0 16px;
+}
+.lebanon-intro h2 .accent { color: var(--accent); }
+.lebanon-intro p { color: var(--text-secondary); font-size: 0.98rem; line-height: 1.7; max-width: 42ch; margin: 0; }
+
+.lebanon-list { list-style: none; margin: 0; padding: 0; }
+.lebanon-list li {
+  display: grid; grid-template-columns: 48px 1fr; gap: 18px; align-items: start;
+  padding: 22px 0;
+  border-top: 1px solid var(--border-strong);
+}
+.lebanon-list li:last-child { border-bottom: 1px solid var(--border-strong); }
+.lb-ico {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: grid; place-items: center;
+  background: var(--accent-soft); border: 1px solid rgba(239,80,35,0.25);
+  color: var(--accent); font-size: 1.1rem;
+}
+.lb-body h3 { margin: 0 0 4px; font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; }
+.lb-body p { margin: 0; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
+
+/* ---- Detail-page responsive ---- */
+@media (max-width: 980px) {
+  .page-hero-grid { grid-template-columns: 1fr; gap: 44px; }
+  .page-hero-copy { max-width: none; }
+  .hire-card { max-width: 420px; }
+  .lebanon-grid { grid-template-columns: 1fr; gap: 36px; }
+  .lebanon-map { width: 200px; right: 0; bottom: auto; top: -8px; opacity: 0.26; }
+}
+@media (max-width: 720px) {
+  .guarantee { grid-template-columns: auto 1fr; }
+  .guarantee .btn { grid-column: 1 / -1; justify-content: center; }
+}
+@media (max-width: 560px) {
+  .guarantee { grid-template-columns: 1fr; text-align: left; }
+  .guarantee-ico { width: 48px; height: 48px; font-size: 1.1rem; }
+}

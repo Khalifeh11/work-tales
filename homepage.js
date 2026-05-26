@@ -62,3 +62,4 @@ navMenu.querySelectorAll('a.nav-link').forEach(a => {
     if (window.matchMedia('(max-width: 980px)').matches) closeMobileMenu();
   });
 });
+
