@@ -1,338 +1,396 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worktales - Your Next Chapter Starts Here</title>
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Worktales — People decisions are the real risk</title>
+<meta name="description" content="Worktales is an integrated workforce consultancy. We help organizations hire, develop, and align the talent that turns strategy into outcomes — built in Beirut, designed for global execution." />
+<link rel="canonical" href="https://worktales.com/" />
+<meta name="theme-color" content="#000000" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Worktales — People decisions are the real risk" />
+<meta property="og:description" content="We help organizations hire, develop, and align the talent that turns strategy into outcomes." />
+<meta property="og:url" content="https://worktales.com/" />
+<meta property="og:image" content="https://worktales.com/assets/worktales.png" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Worktales — People decisions are the real risk" />
+<meta name="twitter:description" content="We help organizations hire, develop, and align the talent that turns strategy into outcomes." />
+<meta name="twitter:image" content="https://worktales.com/assets/worktales.png" />
+
+<link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="homepage.css">
 </head>
 <body>
-    
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
-            <div class="nav-logo">
-                <a href="index.html">
-                    <img src="assets/worktales.png" alt="Worktales" class="nav-logo-img">
-                    <span class="sr-only">Worktales</span>
-                </a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu nav-actions">
-                <li><a class="nav-link" href="aboutus.html">About Us</a></li>
-                <li><a class="nav-link" href="insights.html">Insights</a></li>
-                <li><a class="nav-link" href="talent.html">For Talent</a></li>
-            </ul>
-        </nav>
-    </header>
 
-   <!-- AI ORB HERO SECTION -->
-<section id="home" class="hero-ai">
-    <canvas id="aiParticles"></canvas>
-
-    <video class="hero-bg-video" autoplay muted loop playsinline>
-        <source src="https://cdn.coverr.co/videos/coverr-the-future-is-now-9734/1080p.mp4" type="video/mp4">
-    </video>
-
-    <div class="hero-overlay"></div>
-
-    <!-- AI ORB -->
-    <div class="ai-orb-container">
-        <div class="ai-orb-core"></div>
-        <div class="ai-orb-ring ring-1"></div>
-        <div class="ai-orb-ring ring-2"></div>
-        <div class="ai-orb-ring ring-3"></div>
+<!-- ============================================================
+     HEADER / NAV
+     ============================================================ -->
+<header class="header" id="siteHeader">
+  <nav class="nav container" aria-label="Primary">
+    <div class="nav-logo">
+      <a href="#home" aria-label="Worktales home">
+        <img src="assets/worktales.png" alt="Worktales" class="nav-logo-img">
+        <span class="sr-only">Worktales</span>
+      </a>
     </div>
 
-    <!-- TEXT -->
-    <div class="hero-ai-content">
-        <h1 class="hero-ai-title">
-            <span>Your Next Chapter</span>
-            <span class="highlight">Starts Here</span>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-menu" id="navMenu">
+      <li class="has-dropdown" id="servicesDd">
+        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
+          Services <i class="fas fa-chevron-down chev"></i>
+        </button>
+        <div class="dropdown" role="menu">
+          <a class="dropdown-item" href="#services" role="menuitem">
+            <span class="ico"><i class="fas fa-user-tie"></i></span>
+            <span>
+              <span class="label">Talent Solutions</span>
+              <span class="desc">Precision hiring, dedicated teams, employer-of-record.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="#services" role="menuitem">
+            <span class="ico"><i class="fas fa-graduation-cap"></i></span>
+            <span>
+              <span class="label">Training &amp; Development</span>
+              <span class="desc">Sales, leadership, AI readiness, communication programs.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="#services" role="menuitem">
+            <span class="ico"><i class="fas fa-users-line"></i></span>
+            <span>
+              <span class="label">Culture &amp; Leadership</span>
+              <span class="desc">Team effectiveness, leadership alignment, Insights Discovery.</span>
+            </span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#contact" role="menuitem">
+            <span class="ico"><i class="fas fa-compass"></i></span>
+            <span>
+              <span class="label">For Talent</span>
+              <span class="desc">Opportunities and our talent community.</span>
+            </span>
+          </a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="#why-lebanon">Why Lebanon</a></li>
+      <li><a class="nav-cta" href="#contact">Schedule a call</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-bg"></div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="hero-eyebrow"><span class="pulse"></span> Built in Beirut · Designed for global execution</span>
+        <h1 class="hero-title">
+          People decisions are the <span class="em">real risk</span> in business.
         </h1>
-
-        <p class="hero-ai-subtitle">
-            We help organizations in Lebanon and abroad access the strength of Lebanese talent. Our approach ensures the right person in the right role at the right chapter of their career.
-            <p><strong> Let’s create Worktales worth telling.</strong></p>
-
+        <p class="hero-sub">
+          Strategy looks good on paper. Execution depends on the people behind it.
+          Worktales helps organizations <strong>hire</strong>, <strong>develop</strong>, and <strong>align</strong> the talent that turns ambition into outcomes.
         </p>
 
-            <div class="hero-ai-buttons">
-                <div class="job-tooltip">
-                    <a href="https://scheduler.recruitcrm.io/scheduler?config_id=7d47f2ee-6221-486e-abdf-6eff839f6ad5" class="btn btn-primary">Looking to hire?</a>
-                    <div class="job-tooltip-text">
-                        Start a conversation about building the right team for you.
-                    </div>
-                </div>
-                <div class="job-tooltip job-image-button">
-                    <a href="talent.html" class="job-image-link">Looking for a job?</a>
-                    <div class="job-tooltip-text">
-                        Explore opportunities and join our talent community.
-                    </div>
-                </div>
-            
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Hire with us <i class="fas fa-arrow-right"></i></a>
+          <a href="#services" class="btn btn-ghost">Train your team</a>
         </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-orbit outer"></div>
+        <div class="hero-orbit"></div>
+        <div class="hero-orbit inner"></div>
+        <div class="hero-core"></div>
+        <div class="hero-node h1"><span class="pillar-num">01 Hire</span>Talent</div>
+        <div class="hero-node h2"><span class="pillar-num">02 Build</span>Training</div>
+        <div class="hero-node h3"><span class="pillar-num">03 Connect</span>Culture</div>
+      </div>
     </div>
 
-    
-</section>
-
-<!-- DIVIDER -->
-<div class="section-divider"></div>
-
-<!-- Services Section -->
-<section id="services" class="services section-padding">
-    <img src="assets/s2.png" alt="" class="service-shape shape-left" aria-hidden="true">
-    <img src="assets/s1.png" alt="" class="service-shape shape-right" aria-hidden="true">
-    <div class="container">
-        <h2 class="section-title animate-from-right">The Worktales Way</h2>
-        <div class="services-intro animate-from-left">
-            <p class="worktales-lead">We work closely with your leadership to understand how your organization operates, how decisions are made, and what success looks like.</p>
-            <p> This understanding shapes how we deliver our services, allowing us to place talent that fits the role, aligns with your culture, and supports your growth strategy.</p>
-        </div>
-
-        <div class="application-process animate-from-left">
-            <ol class="process-stack" role="list">
-                <li class="process-card" style="--index: 1;">
-                    <div class="process-card-body">
-                        
-                        <div class="service-body">
-                            <div class="service-body-left">
-                                <div class="service-icon"><img src="assets/icon 1.png" alt="Recruitment icon"></div>
-                                <h3>Strategic Talent Search</h3>
-                                <p>From sourcing to onboarding, we take ownership of the full hiring journey to ensure talent contributes from day one. Our approach spans all levels, from entry to executive, ensuring each hire is intentional, aligned with your culture, and built to support long term growth.</p>
-                            </div>
-                            <div class="service-features">
-                                <button class="features-toggle" type="button" aria-expanded="false">Key Features</button>
-                                <ul class="feature-list" aria-hidden="true">
-                                    <li>AI assisted sourcing</li>
-                                    <li>Standardized fit assessments</li>
-                                    <li>Role specific hiring workflows</li>
-                                    <li>Coordinated onboarding support</li>
-                                </ul>
-                                <a href="https://scheduler.recruitcrm.io/scheduler?config_id=7d47f2ee-6221-486e-abdf-6eff839f6ad5" class="btn btn-primary service-cta">Start Hiring</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="process-card" style="--index: 2;">
-                    <div class="process-card-body">
-                        
-                        <div class="service-body">
-                            <div class="service-body-left">
-                                <div class="service-icon"><img src="assets/icon 2.png" alt="Outsourcing icon"></div>
-                                <h3>Remote Talent Hubs</h3>
-                                <p>Lebanon’s talent market offers strong expertise, creativity, and adaptability across functions. By building or outsourcing remote teams here, organizations gain access to high quality capabilities while optimizing costs, enabling smarter scaling and sustainable growth.</p>
-                            </div>
-                            <div class="service-features">
-                                <button class="features-toggle" type="button" aria-expanded="false">Key Features</button>
-                                <ul class="feature-list" aria-hidden="true">
-                                    <li>Dedicated teams exclusive to your business</li>
-                                    <li>Fast integration into your workflows</li>
-                                    <li>Performance managed delivery</li>
-                                    <li>Ongoing operational alignment</li>
-                                </ul>
-                                <a href="https://scheduler.recruitcrm.io/scheduler?config_id=7d47f2ee-6221-486e-abdf-6eff839f6ad5" class="btn btn-primary service-cta">Build Your Team</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="process-card" style="--index: 3;">
-                    <div class="process-card-body">
-                        
-                        <div class="service-body">
-                            <div class="service-body-left">
-                                <div class="service-icon"><img src="assets/icon 3.png" alt="Employer of Record icon"></div>
-                                <h3>Talent Enablement</h3>
-                                <p>Hiring talent in Lebanon should not require setting up a local entity. As your Employer of Record, Worktales legally employs your team while you remain focused on leading their work, not managing administration.</p>
-                            </div>
-                            <div class="service-features">
-                                <button class="features-toggle" type="button" aria-expanded="false">Key Features</button>
-                                <ul class="feature-list" aria-hidden="true">
-                                    <li>Compliant local employment</li>
-                                    <li>Payroll and benefits handled</li>
-                                    <li>No local entity required</li>
-                                    <li>Fast, smooth onboarding</li>
-                                </ul>
-                                <a href="https://scheduler.recruitcrm.io/scheduler?config_id=7d47f2ee-6221-486e-abdf-6eff839f6ad5" class="btn btn-primary service-cta">Hire in Lebanon</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ol>
-            
-        </div>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="num">3</div>
+        <div class="lbl">Integrated pillars</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="num"><i class="fas fa-certificate hero-meta-cert"></i></div>
+        <div class="lbl">Insights Discovery Partner</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="num">90%</div>
+        <div class="lbl">Client satisfaction</div>
+      </div>
     </div>
+  </div>
 </section>
 
-
-<!-- DIVIDER -->
-<div class="section-divider"></div>
-
-<!-- Why Lebanon -->
-<section id="why-lebanon" class="why-lebanon section-padding">
-    <div class="container">
-        <div class="cedar-ghost" aria-hidden="true">
-            <img src="assets/cedar.png" alt="">
-        </div>
-
-        <div class="why-lebanon-heading">
-            <h2 class="section-title animate-from-bottom">Why Lebanon</h2>
-            <p class="why-lebanon-subtitle animate-from-bottom">Lebanon offers a unique combination of skill, adaptability, and global mindset. Its talent pool has consistently supported regional and international organizations across industries, delivering high quality work in fast moving and complex environments.</p>
-        </div>
-
-        <div class="why-hex-scene">
-            <div class="why-map-glow"></div>
-            <div class="why-hex-mesh" aria-hidden="true"></div>
-            <div class="why-hex-cluster" aria-hidden="true">
-                <div class="why-hex why-hex-1" data-side="left">
-                    <div class="hex-surface" aria-hidden="true"></div>
-                    <div class="hex-outline" aria-hidden="true"></div>
-                    <span class="why-hex-label">Strong Education</span>
-                    <div class="hex-tooltip hex-tooltip-left">
-                        <ul class="why-tooltip-list">
-                            <li>40+ accredited universities</li>
-                            <li>International degree programs</li>
-                            <li>STEM and business focused</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="why-hex why-hex-2" data-side="left">
-                    <div class="hex-surface" aria-hidden="true"></div>
-                    <div class="hex-outline" aria-hidden="true"></div>
-                    <span class="why-hex-label">Global Client Ready</span>
-                    <div class="hex-tooltip hex-tooltip-left">
-                        <ul class="why-tooltip-list">
-                            <li>Professional English and French</li>
-                            <li>Clear written and verbal skills</li>
-                            <li>Remote work proven</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="why-hex why-hex-3" data-side="right">
-                    <div class="hex-surface" aria-hidden="true"></div>
-                    <div class="hex-outline" aria-hidden="true"></div>
-                    <span class="why-hex-label">International Exposure</span>
-                    <div class="hex-tooltip hex-tooltip-right">
-                        <ul class="why-tooltip-list">
-                            <li>Experience with global teams</li>
-                            <li>Familiar with international standards</li>
-                            <li>Familiar with system and operations</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="why-hex why-hex-4" data-side="right">
-                    <div class="hex-surface" aria-hidden="true"></div>
-                    <div class="hex-outline" aria-hidden="true"></div>
-                    <span class="why-hex-label">Cost Efficient Talent</span>
-                    <div class="hex-tooltip hex-tooltip-right">
-                        <ul class="why-tooltip-list">
-                            <li>Competitive salary benchmarks</li>
-                            <li>Lower operating costs</li>
-                            <li>High value delivery</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="why-map">
-                <img src="assets/lebanon.png" alt="Map of Lebanon">
-            </div>
-
-        </div>
+<!-- ============================================================
+     THREE-PILLAR SERVICES OVERVIEW
+     ============================================================ -->
+<section class="pillars section-padding" id="services">
+  <div class="container">
+    <div class="pillars-intro">
+      <div class="section-title">How we work</div>
+      <h2>One consultancy, <span class="accent">three pillars</span>, <span class="nowrap">one outcome: people who deliver.</span></h2>
     </div>
+
+    <div class="pillar-grid">
+      <article class="pillar-card">
+        <span class="pillar-num">01 / Hire</span>
+        <h3 class="pillar-name">Talent Solutions</h3>
+        <div class="pillar-subtitle">Precision hiring &amp; teams</div>
+        <p class="pillar-desc">
+          Strategic search, dedicated remote teams, and employer-of-record services. We own the full hiring journey so each hire is intentional, culture-aligned, and ready to contribute from day one.
+        </p>
+        <ul class="pillar-features">
+          <li>Executive &amp; specialist search</li>
+          <li>Dedicated remote teams in Lebanon</li>
+          <li>EOR &mdash; no local entity required</li>
+          <li>0% retainer · 90-day replacement</li>
+        </ul>
+        <a href="#contact" class="pillar-link">Explore Talent Solutions <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <article class="pillar-card">
+        <span class="pillar-num">02 / Build</span>
+        <h3 class="pillar-name">Training &amp; Development</h3>
+        <div class="pillar-subtitle">Skills that move the business</div>
+        <p class="pillar-desc">
+          Tailored programs in sales performance, leadership, AI readiness, organizational execution, and communication &mdash; designed around the real capability gaps slowing your teams down.
+        </p>
+        <ul class="pillar-features">
+          <li>Sales &amp; commercial effectiveness</li>
+          <li>AI / technology &amp; future skills</li>
+          <li>Leadership &amp; execution</li>
+          <li>Workshops · certificates · diplomas</li>
+        </ul>
+        <a href="#contact" class="pillar-link">Explore Training &amp; Development <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <article class="pillar-card">
+        <span class="pillar-num">03 / Connect</span>
+        <h3 class="pillar-name">Culture &amp; Leadership</h3>
+        <div class="pillar-subtitle">Teams that work together</div>
+        <p class="pillar-desc">
+          High-performing organizations build culture deliberately. We align leadership, sharpen team dynamics, and run Insights Discovery to make collaboration faster, clearer, and more accountable.
+        </p>
+        <ul class="pillar-features">
+          <li>Team building &amp; effectiveness</li>
+          <li>Leadership alignment</li>
+          <li>Change &amp; sales effectiveness</li>
+          <li>Insights Discovery partner</li>
+        </ul>
+        <a href="#contact" class="pillar-link">Explore Culture &amp; Leadership <i class="fas fa-arrow-right"></i></a>
+      </article>
+    </div>
+  </div>
 </section>
 
- <section id="contact" class="contact section-padding">
-        <div class="container">
-            <h2 class="section-title contact-heading animate-from-bottom">Let’s write your next worktale</h2>
-            <div class="contact-card">
-                <div class="contact-info-pane animate-from-left">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <p>Georges Katroux Street, Badaro Beirut, Lebanon</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <p>info@worktales.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <p>+961 81 850 817</p>
-                        </div>
-                    </div>
-                    <div class="contact-shapes">
-                        <img src="assets/c.png" alt="" aria-hidden="true">
-                    </div>
-                </div>
-                <div class="contact-form-pane animate-from-right">
-                    <h3>Send us a Message</h3>
-                    <form class="contact-form">
-                        <div class="contact-row">
-                            <div class="form-group">
-                                <label for="name" class="sr-only">Full Name</label>
-                                <input type="text" id="name" name="name" placeholder="Full Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="sr-only">Email Address</label>
-                                <input type="email" id="email" name="email" placeholder="Email Address" required>
-                            </div>
-                        </div>
-                            <div class="form-group">
-                                <label for="subject" class="sr-only">Subject</label>
-                                <select id="subject" name="subject" required>
-                                    <option value="">Subject</option>
-                                    <option value="network">Talent hiring inquiry</option>
-                                    <option value="roles">Remote team setup</option>
-                                    <option value="general">Employment and compliance</option>
-                                    <option value="partnership">Partnership opportunity</option>
-                                    <option value="pricing">Talent community registration</option>
-                                    <option value="sourcing">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="message" class="sr-only">Message</label>
-                                <textarea id="message" name="message" rows="5" placeholder="Message" required></textarea>
-                            </div>
-                        <button type="submit" class="btn btn-primary contact-submit">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============================================================
+     OUTCOMES BAND
+     ============================================================ -->
+<section class="outcomes section-padding">
+  <div class="container outcomes-inner">
+    <div class="outcomes-head">
+      <div class="section-title">Outcomes that matter to executives</div>
+      <h2>The numbers behind the work.</h2>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcome">
+        <div class="big">90%</div>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="lbl">Client satisfaction</div>
+      </div>
+      <div class="outcome">
+        <div class="big">65%</div>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="lbl">Reduction in hiring cost</div>
+      </div>
+      <div class="outcome">
+        <div class="big">92%</div>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="lbl">Retention at 12 months</div>
+      </div>
+      <div class="outcome">
+        <div class="big">&lt;2&nbsp;wks</div>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="lbl">Talent ready to onboard</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- Footer -->
+<!-- ============================================================
+     WHY LEBANON (compressed teaser)
+     ============================================================ -->
+<section class="why-lebanon section-padding" id="why-lebanon">
+  <div class="container">
+    <div class="why-head">
+      <div class="section-title">Why Lebanon</div>
+      <h2>A talent pool that punches above its weight.</h2>
+      <p>
+        For Talent Solutions and remote teams, Lebanon offers a rare mix &mdash; rigorous education, multilingual fluency, international experience, and competitive economics.
+      </p>
+      <a href="#contact" class="btn-link">Talk to us about Lebanon talent <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="why-scene">
+      <div class="why-scene-glow" aria-hidden="true"></div>
+      <div class="why-scene-mesh" aria-hidden="true"></div>
+
+      <div class="why-map" aria-hidden="true">
+        <img src="assets/lebanon.png" alt="" />
+      </div>
+
+      <div class="why-hex-cluster">
+        <div class="why-hex" data-side="left" role="button" tabindex="0" aria-label="Strong Education">
+          <span class="hex-surface" aria-hidden="true"></span>
+          <span class="hex-outline" aria-hidden="true"></span>
+          <span class="why-hex-label">Strong<br>Education</span>
+          <div class="hex-tooltip" role="tooltip">
+            <ul class="why-tooltip-list">
+              <li>40+ accredited universities</li>
+              <li>International degree programs</li>
+              <li>STEM and business focused</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="why-hex" data-side="left" role="button" tabindex="0" aria-label="English and French">
+          <span class="hex-surface" aria-hidden="true"></span>
+          <span class="hex-outline" aria-hidden="true"></span>
+          <span class="why-hex-label">English &amp;<br>French</span>
+          <div class="hex-tooltip" role="tooltip">
+            <ul class="why-tooltip-list">
+              <li>Professional English and French</li>
+              <li>Clear written and verbal skills</li>
+              <li>Remote work proven</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="why-hex" data-side="right" role="button" tabindex="0" aria-label="Global Exposure">
+          <span class="hex-surface" aria-hidden="true"></span>
+          <span class="hex-outline" aria-hidden="true"></span>
+          <span class="why-hex-label">Global<br>Exposure</span>
+          <div class="hex-tooltip" role="tooltip">
+            <ul class="why-tooltip-list">
+              <li>Experience with global teams</li>
+              <li>Familiar with international standards</li>
+              <li>Comfortable across systems &amp; ops</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="why-hex" data-side="right" role="button" tabindex="0" aria-label="Competitive Cost">
+          <span class="hex-surface" aria-hidden="true"></span>
+          <span class="hex-outline" aria-hidden="true"></span>
+          <span class="why-hex-label">Competitive<br>Cost</span>
+          <div class="hex-tooltip" role="tooltip">
+            <ul class="why-tooltip-list">
+              <li>Competitive salary benchmarks</li>
+              <li>Lower operating costs</li>
+              <li>High value delivery</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CLOSING CTA
+     ============================================================ -->
+<section class="cta-band" id="contact">
+  <div class="container">
+    <div class="section-title">Let&rsquo;s talk</div>
+    <h2>Let&rsquo;s write your next <span class="accent">worktale</span>.</h2>
+    <p>
+      Whether you&rsquo;re hiring, building capability, or aligning your leadership team &mdash; start with a conversation. We&rsquo;ll listen first, then propose.
+    </p>
+    <div class="btns">
+      <a href="mailto:info@worktales.com?subject=Schedule%20a%20call" class="btn btn-primary">Schedule a call <i class="fas fa-arrow-right"></i></a>
+      <a href="mailto:info@worktales.com?subject=Brochure%20request" class="btn btn-ghost">Request a brochure</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
 <footer class="footer">
-    <div class="container">
-            <div class="footer-content">
-                <div class="footer-section animate-from-bottom">
-                    <img src="assets/worktales.png" alt="Worktales" class="footer-logo-img">
-                    <p>&copy; 2026 Worktales. All rights reserved.</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/worktalesofficial/"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.facebook.com/profile.php?id=61585264022723#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/worktales.official?igsh=d3pieW9veHJmMXVx"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                
-                
-                
-            </div>
-            
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-row">
+          <img src="assets/worktales.png" alt="Worktales" class="footer-logo-img">
         </div>
+        <p class="tagline">Empowering People. Unlocking Performance.</p>
+        <p>
+          An integrated workforce consultancy operating across hiring, capability development, and culture &amp; leadership alignment.
+        </p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Talent Solutions</a></li>
+          <li><a href="#services">Training &amp; Development</a></li>
+          <li><a href="#services">Culture &amp; Leadership</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why-lebanon">Why Lebanon</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><span><i class="fas fa-map-marker-alt footer-contact-ico"></i> Khanamerian Bldg, 5th Fl, Badaro · Beirut</span></li>
+          <li><a href="mailto:info@worktales.com"><i class="fas fa-envelope footer-contact-ico"></i> info@worktales.com</a></li>
+          <li><a href="tel:+96181850817"><i class="fas fa-phone footer-contact-ico"></i> +961 81 850 817</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Worktales. All rights reserved.</span>
+      <span>Empowering People. Unlocking Performance.</span>
+    </div>
+  </div>
 </footer>
 
-<script src="script.js" defer></script>
+<script src="homepage.js" defer></script>
+
 </body>
 </html>
