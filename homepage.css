@@ -1175,6 +1175,7 @@ button.nav-link {
   }
 }
 @media (max-width: 560px) {
+  .pillars-intro h2 .nowrap { white-space: normal; }
   .outcomes-grid { grid-template-columns: 1fr; }
   .outcome { border-right: none; border-bottom: 1px solid var(--border-strong); }
   .outcome:last-child { border-bottom: none; }
