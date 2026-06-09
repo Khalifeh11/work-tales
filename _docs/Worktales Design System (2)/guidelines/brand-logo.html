@@ -1,0 +1,27 @@
+<!-- @dsCard group="Brand" viewport="700x210" name="Logo · Wordmark" subtitle="Lowercase 'worktales' with the orange flame over the t" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--color-bg); padding: 0; font-family: var(--font-sans); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 210px; }
+  .cell { display: flex; align-items: center; justify-content: center; padding: 28px; }
+  .dark { background: var(--color-bg); }
+  .light { background: var(--wt-white); }
+  .grid img { height: 50px; width: auto; }
+  .tag { position: absolute; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .cell { position: relative; }
+  .cap-d { color: var(--color-text-muted); }
+  .cap-l { color: var(--wt-gray); }
+  .tag { bottom: 12px; left: 16px; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="cell dark"><img src="../assets/worktales.png" alt="Worktales" /><span class="tag cap-d">On dark — worktales.png</span></div>
+    <div class="cell light"><img src="../assets/worktales-logo.png" alt="Worktales" /><span class="tag cap-l">On light — worktales-logo.png</span></div>
+  </div>
+</body>
+</html>

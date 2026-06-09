@@ -1,0 +1,25 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Signature Gradients" subtitle="Accent, molten core, card, and section washes" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--color-bg); padding: 24px; }
+  .row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .sw { width: 150px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border); }
+  .chip { height: 80px; }
+  .meta { padding: 9px 12px; background: var(--wt-ink-800); }
+  .name { font-family: var(--font-sans); font-size: 12px; font-weight: 600; color: var(--color-text); }
+  .desc { font-family: var(--font-sans); font-size: 10.5px; color: var(--color-text-muted); margin-top: 2px; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--gradient-accent)"></div><div class="meta"><div class="name">Accent</div><div class="desc">orange → bright</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--gradient-core)"></div><div class="meta"><div class="name">Core</div><div class="desc">hero emblem</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--gradient-card)"></div><div class="meta"><div class="name">Card</div><div class="desc">surface tint</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--gradient-guarantee)"></div><div class="meta"><div class="name">Guarantee</div><div class="desc">maroon band</div></div></div>
+  </div>
+</body>
+</html>

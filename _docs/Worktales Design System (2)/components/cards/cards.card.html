@@ -1,0 +1,51 @@
+<!-- @dsCard group="Components" viewport="700x540" name="Cards — Pillar, Stats, Advantage, Webinar" subtitle="Service, proof, feature, and event cards" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<style>
+  body { margin: 0; background: var(--color-bg); padding: 26px; font-family: var(--font-sans); }
+  .stack { display: flex; flex-direction: column; gap: 24px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { PillarCard, StatRow, AdvantageItem, WebinarCard } = window.WorktalesDesignSystem_8c64cc;
+    function Demo() {
+      return (
+        <div className="stack">
+          <StatRow stats={[
+            { value: "90%", label: "Satisfaction" },
+            { value: "65%", label: "Cost down" },
+            { value: "92%", label: "Retention" },
+            { value: <>&lt;2 wks</>, label: "To onboard" },
+          ]} />
+          <div className="two">
+            <PillarCard
+              icon="fa-user-tie" number="01 / Hire" name="Talent Solutions"
+              subtitle="Precision hiring & teams"
+              description="Strategic search, dedicated remote teams, and employer-of-record — every hire intentional and culture-aligned."
+              features={["Executive & specialist search", "Dedicated remote teams", "0% retainer · 90-day replacement"]}
+              linkLabel="Explore Talent Solutions" />
+            <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+              <AdvantageItem icon="fa-microchip" title="Modern talent sourcing"
+                description="AI-assisted sourcing and structured assessment surface the right candidates faster." />
+              <WebinarCard month="JUL" day="18" tag="Live" title="AI readiness for hiring teams"
+                meta="Jul 18 · 5:00pm · Online" registerLabel="Register" />
+            </div>
+          </div>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+  </script>
+</body>
+</html>

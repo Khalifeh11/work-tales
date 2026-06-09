@@ -1,0 +1,28 @@
+<!-- @dsCard group="Brand" viewport="700x170" name="Icon Tiles" subtitle="Font Awesome 6.4 glyphs seated in orange-wash rounded tiles" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<style>
+  body { margin: 0; background: var(--color-bg); padding: 28px 24px; font-family: var(--font-sans); }
+  .row { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+  .tile { width: 56px; height: 56px; border-radius: var(--radius-md); background: var(--color-accent-soft); border: 1px solid var(--color-border-accent); display: grid; place-items: center; color: var(--color-accent); font-size: 1.25rem; }
+  .tile.solid { background: var(--color-accent); border-color: var(--color-accent); color: #fff; box-shadow: var(--shadow-accent); }
+  .note { font-size: 11px; color: var(--color-text-muted); margin-top: 18px; letter-spacing: 0.03em; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="tile"><i class="fas fa-user-tie"></i></div>
+    <div class="tile"><i class="fas fa-graduation-cap"></i></div>
+    <div class="tile"><i class="fas fa-users"></i></div>
+    <div class="tile"><i class="fas fa-compass"></i></div>
+    <div class="tile"><i class="fas fa-microchip"></i></div>
+    <div class="tile"><i class="fas fa-globe"></i></div>
+    <div class="tile solid"><i class="fas fa-shield-halved"></i></div>
+  </div>
+  <div class="note">Font Awesome 6.4.0 · solid · orange glyph on orange-wash tile · solid variant for guarantees</div>
+</body>
+</html>

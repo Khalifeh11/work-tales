@@ -1,0 +1,417 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/cards/**",
+              "components/core/**",
+              "components/navigation/**",
+              "ui_kits/website/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Montserrat))/i]",
+        "message": "Font not provided by the design system. Available: Montserrat."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='AdvantageItem'] > JSXAttribute > JSXIdentifier[name!=/^(?:icon|title|description|style|key|ref|className|style|children)$/]",
+        "message": "<AdvantageItem> doesn't accept that prop. Declared props: icon, title, description, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|style|key|ref|className|style|children)$/]",
+        "message": "<Badge> doesn't accept that prop. Declared props: children, variant, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:outline|soft|solid)$/]",
+        "message": "<Badge> variant must be one of 'outline' | 'soft' | 'solid'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|children|icon|showIcon|href|onClick|disabled|type|style|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, size, children, icon, showIcon, href, onClick, disabled, type, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|ghost|link)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'ghost' | 'link'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Button> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='type'] > Literal[value!=/^(?:button|submit|reset)$/]",
+        "message": "<Button> type must be one of 'button' | 'submit' | 'reset'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|pulse|style|key|ref|className|style|children)$/]",
+        "message": "<Eyebrow> doesn't accept that prop. Declared props: children, variant, pulse, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:plain|pill)$/]",
+        "message": "<Eyebrow> variant must be one of 'plain' | 'pill'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='IconTile'] > JSXAttribute > JSXIdentifier[name!=/^(?:icon|size|solid|style|key|ref|className|style|children)$/]",
+        "message": "<IconTile> doesn't accept that prop. Declared props: icon, size, solid, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='IconTile'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<IconTile> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='NavBar'] > JSXAttribute > JSXIdentifier[name!=/^(?:logoSrc|logoAlt|links|ctaLabel|onCta|scrolled|style|key|ref|className|style|children)$/]",
+        "message": "<NavBar> doesn't accept that prop. Declared props: logoSrc, logoAlt, links, ctaLabel, onCta, scrolled, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PillarCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:icon|number|name|subtitle|description|features|linkLabel|href|style|key|ref|className|style|children)$/]",
+        "message": "<PillarCard> doesn't accept that prop. Declared props: icon, number, name, subtitle, description, features, linkLabel, href, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatBlock'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|label|bordered|style|key|ref|className|style|children)$/]",
+        "message": "<StatBlock> doesn't accept that prop. Declared props: value, label, bordered, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='WebinarCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:month|day|tag|title|meta|registerLabel|disabled|onRegister|style|key|ref|className|style|children)$/]",
+        "message": "<WebinarCard> doesn't accept that prop. Declared props: month, day, tag, title, meta, registerLabel, disabled, onRegister, style."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "AdvantageItem": {
+        "replaces": []
+      },
+      "Badge": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": []
+      },
+      "Eyebrow": {
+        "replaces": []
+      },
+      "IconTile": {
+        "replaces": []
+      },
+      "NavBar": {
+        "replaces": []
+      },
+      "PillarCard": {
+        "replaces": []
+      },
+      "StatBlock": {
+        "replaces": []
+      },
+      "WebinarCard": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--blur-glass",
+      "--blur-header",
+      "--blur-node",
+      "--border-width",
+      "--border-width-cta",
+      "--color-accent",
+      "--color-accent-bright",
+      "--color-accent-deep",
+      "--color-accent-hover",
+      "--color-accent-soft",
+      "--color-bg",
+      "--color-bg-elevated",
+      "--color-border",
+      "--color-border-accent",
+      "--color-border-strong",
+      "--color-surface",
+      "--color-surface-card",
+      "--color-surface-glass",
+      "--color-text",
+      "--color-text-muted",
+      "--color-text-on-accent",
+      "--color-text-secondary",
+      "--container-pad",
+      "--ease-bounce",
+      "--ease-out",
+      "--eyebrow-transform",
+      "--eyebrow-weight",
+      "--font-body",
+      "--font-display",
+      "--font-sans",
+      "--gradient-accent",
+      "--gradient-card",
+      "--gradient-core",
+      "--gradient-guarantee",
+      "--gradient-hero-maroon",
+      "--gradient-hero-orange",
+      "--gradient-section",
+      "--grid-gap",
+      "--header-height",
+      "--heading-tracking",
+      "--heading-weight",
+      "--leading-body",
+      "--leading-heading",
+      "--leading-relaxed",
+      "--leading-snug",
+      "--leading-tight",
+      "--radius-2xl",
+      "--radius-3xl",
+      "--radius-lg",
+      "--radius-md",
+      "--radius-pill",
+      "--radius-sm",
+      "--radius-xl",
+      "--section-padding",
+      "--shadow-accent",
+      "--shadow-card",
+      "--shadow-core",
+      "--shadow-dropdown",
+      "--shadow-header",
+      "--space-1",
+      "--space-10",
+      "--space-12",
+      "--space-16",
+      "--space-2",
+      "--space-20",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--text-body",
+      "--text-card-title",
+      "--text-eyebrow",
+      "--text-h1",
+      "--text-h2",
+      "--text-h2-sm",
+      "--text-h3",
+      "--text-hero",
+      "--text-lede",
+      "--text-micro",
+      "--text-sm",
+      "--text-stat",
+      "--text-xs",
+      "--tracking-caps",
+      "--tracking-eyebrow",
+      "--tracking-normal",
+      "--tracking-snug",
+      "--tracking-tight",
+      "--tracking-wide",
+      "--tracking-widest",
+      "--transition",
+      "--transition-bounce",
+      "--transition-fast",
+      "--transition-slow",
+      "--weight-black",
+      "--weight-bold",
+      "--weight-medium",
+      "--weight-regular",
+      "--weight-semibold",
+      "--wt-black",
+      "--wt-border",
+      "--wt-border-orange",
+      "--wt-border-orange-strong",
+      "--wt-border-strong",
+      "--wt-footer",
+      "--wt-glass-header",
+      "--wt-glass-header-scrolled",
+      "--wt-glass-menu",
+      "--wt-gray",
+      "--wt-ink-700",
+      "--wt-ink-800",
+      "--wt-ink-850",
+      "--wt-ink-900",
+      "--wt-ink-950",
+      "--wt-maroon",
+      "--wt-maroon-darker",
+      "--wt-maroon-deep",
+      "--wt-near-black",
+      "--wt-orange",
+      "--wt-orange-bright",
+      "--wt-orange-glow",
+      "--wt-orange-hover",
+      "--wt-orange-ring",
+      "--wt-orange-soft",
+      "--wt-orange-wash",
+      "--wt-sage",
+      "--wt-surface",
+      "--wt-surface-muted",
+      "--wt-surface-strong",
+      "--wt-white",
+      "--z-header"
+    ],
+    "tokenKinds": {
+      "--wt-black": "color",
+      "--wt-near-black": "color",
+      "--wt-ink-950": "color",
+      "--wt-ink-900": "color",
+      "--wt-ink-850": "color",
+      "--wt-ink-800": "color",
+      "--wt-ink-700": "color",
+      "--wt-footer": "color",
+      "--wt-orange": "color",
+      "--wt-orange-bright": "color",
+      "--wt-orange-hover": "color",
+      "--wt-orange-glow": "color",
+      "--wt-maroon": "color",
+      "--wt-maroon-deep": "color",
+      "--wt-maroon-darker": "color",
+      "--wt-sage": "color",
+      "--wt-white": "color",
+      "--wt-gray": "color",
+      "--wt-surface": "color",
+      "--wt-surface-strong": "color",
+      "--wt-surface-muted": "color",
+      "--wt-glass-header": "color",
+      "--wt-glass-header-scrolled": "color",
+      "--wt-glass-menu": "color",
+      "--wt-border": "color",
+      "--wt-border-strong": "color",
+      "--wt-border-orange": "color",
+      "--wt-border-orange-strong": "color",
+      "--wt-orange-soft": "color",
+      "--wt-orange-wash": "color",
+      "--wt-orange-ring": "color",
+      "--color-bg": "color",
+      "--color-bg-elevated": "color",
+      "--color-surface": "color",
+      "--color-surface-card": "color",
+      "--color-surface-glass": "color",
+      "--color-accent": "color",
+      "--color-accent-hover": "color",
+      "--color-accent-bright": "color",
+      "--color-accent-soft": "color",
+      "--color-accent-deep": "color",
+      "--color-text": "font",
+      "--color-text-secondary": "font",
+      "--color-text-muted": "font",
+      "--color-text-on-accent": "font",
+      "--color-border": "color",
+      "--color-border-strong": "color",
+      "--color-border-accent": "color",
+      "--gradient-accent": "color",
+      "--gradient-core": "color",
+      "--gradient-card": "color",
+      "--gradient-section": "color",
+      "--gradient-hero-orange": "color",
+      "--gradient-hero-maroon": "color",
+      "--gradient-guarantee": "color",
+      "--font-sans": "font",
+      "--font-display": "font",
+      "--font-body": "font",
+      "--weight-regular": "font",
+      "--weight-medium": "font",
+      "--weight-semibold": "font",
+      "--weight-bold": "font",
+      "--weight-black": "font",
+      "--text-hero": "font",
+      "--text-h1": "font",
+      "--text-h2": "font",
+      "--text-h2-sm": "font",
+      "--text-h3": "font",
+      "--text-stat": "font",
+      "--text-card-title": "font",
+      "--text-lede": "font",
+      "--text-body": "font",
+      "--text-sm": "font",
+      "--text-xs": "font",
+      "--text-eyebrow": "font",
+      "--text-micro": "font",
+      "--leading-tight": "font",
+      "--leading-heading": "font",
+      "--leading-snug": "font",
+      "--leading-body": "font",
+      "--leading-relaxed": "font",
+      "--tracking-tight": "font",
+      "--tracking-snug": "font",
+      "--tracking-normal": "font",
+      "--tracking-wide": "font",
+      "--tracking-eyebrow": "font",
+      "--tracking-caps": "font",
+      "--tracking-widest": "font",
+      "--heading-weight": "font",
+      "--heading-tracking": "font",
+      "--eyebrow-weight": "font",
+      "--eyebrow-transform": "other",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--space-10": "spacing",
+      "--space-12": "spacing",
+      "--space-16": "spacing",
+      "--space-20": "spacing",
+      "--section-padding": "spacing",
+      "--container-pad": "spacing",
+      "--grid-gap": "spacing",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-lg": "radius",
+      "--radius-xl": "radius",
+      "--radius-2xl": "radius",
+      "--radius-3xl": "radius",
+      "--radius-pill": "radius",
+      "--border-width": "spacing",
+      "--border-width-cta": "spacing",
+      "--shadow-header": "shadow",
+      "--shadow-dropdown": "shadow",
+      "--shadow-card": "shadow",
+      "--shadow-accent": "shadow",
+      "--shadow-core": "shadow",
+      "--blur-header": "spacing",
+      "--blur-glass": "spacing",
+      "--blur-node": "spacing",
+      "--ease-bounce": "other",
+      "--ease-out": "other",
+      "--transition-fast": "other",
+      "--transition": "other",
+      "--transition-slow": "other",
+      "--transition-bounce": "other",
+      "--header-height": "spacing",
+      "--z-header": "other"
+    },
+    "fontFamilies": [
+      "Montserrat"
+    ]
+  }
+}

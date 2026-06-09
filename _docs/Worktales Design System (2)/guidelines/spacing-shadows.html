@@ -1,0 +1,25 @@
+<!-- @dsCard group="Spacing" viewport="700x200" name="Shadows & Glow" subtitle="Far ambient shadows for floating glass; orange glow for emphasis" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--color-bg); padding: 32px 24px; font-family: var(--font-sans); }
+  .row { display: flex; gap: 30px; flex-wrap: wrap; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .box { width: 130px; height: 84px; border-radius: var(--radius-xl); background: var(--wt-ink-800); border: 1px solid var(--color-border-strong); }
+  .s-card { box-shadow: var(--shadow-card); }
+  .s-drop { box-shadow: var(--shadow-dropdown); }
+  .s-accent { box-shadow: var(--shadow-accent); background: var(--color-accent); border-color: var(--color-accent); }
+  .lbl { font-size: 11px; color: var(--color-text); font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="item"><div class="box s-card"></div><div class="lbl">Card · far ambient</div></div>
+    <div class="item"><div class="box s-drop"></div><div class="lbl">Dropdown · deep</div></div>
+    <div class="item"><div class="box s-accent"></div><div class="lbl">Accent · orange glow</div></div>
+  </div>
+</body>
+</html>

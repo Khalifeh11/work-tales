@@ -1,0 +1,61 @@
+/* ============================================================
+   WORKTALES — Spacing, radii, shadows, motion
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* ---- Fluid section rhythm ---- */
+  --section-padding: clamp(64px, 9vw, 120px);
+  --container-pad: clamp(20px, 5vw, 120px);
+  --grid-gap: 22px;            /* default card grid gap */
+
+  /* ---- Radii ---- */
+  --radius-sm: 8px;
+  --radius-md: 12px;          /* icon tiles, dropdown rows */
+  --radius-lg: 14px;          /* dropdown panel */
+  --radius-xl: 16px;          /* webinar / advantage cards */
+  --radius-2xl: 18px;         /* pillar cards */
+  --radius-3xl: 20px;         /* glass hire-card */
+  --radius-pill: 999px;       /* buttons, chips, eyebrows */
+
+  /* ---- Borders ---- */
+  --border-width: 1px;
+  --border-width-cta: 1.5px;
+
+  /* ---- Shadows ---- */
+  --shadow-header: 0 12px 30px rgba(0, 0, 0, 0.32);
+  --shadow-dropdown: 0 24px 60px rgba(0, 0, 0, 0.55);
+  --shadow-card: 0 30px 70px rgba(0, 0, 0, 0.45);
+  --shadow-accent: 0 12px 30px rgba(239, 80, 35, 0.40);
+  --shadow-core: 0 0 80px rgba(239, 80, 35, 0.45), inset 0 0 30px rgba(0, 0, 0, 0.4);
+
+  /* ---- Blur ---- */
+  --blur-header: 12px;
+  --blur-glass: 14px;
+  --blur-node: 6px;
+
+  /* ---- Motion ---- */
+  --ease-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275); /* @kind other */
+  --ease-out: ease; /* @kind other */
+  --transition-fast: 0.2s ease; /* @kind other */
+  --transition: 0.25s ease; /* @kind other */
+  --transition-slow: 0.35s ease; /* @kind other */
+  --transition-bounce: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* @kind other */
+
+  /* ---- Layout ---- */
+  --header-height: 84px;
+  --z-header: 1000; /* @kind other */
+}

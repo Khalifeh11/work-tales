@@ -63,3 +63,35 @@ navMenu.querySelectorAll('a.nav-link').forEach(a => {
   });
 });
 
+// Contact form → build a mailto draft (no backend)
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
+    const name = (formData.get('name') || '').toString().trim();
+    const email = (formData.get('email') || '').toString().trim();
+    const subjectValue = (formData.get('subject') || '').toString().trim();
+    const message = (formData.get('message') || '').toString().trim();
+    const subjectSelect = contactForm.querySelector("select[name='subject']");
+    const subjectText = subjectSelect?.options?.[subjectSelect.selectedIndex]?.text || subjectValue;
+    const mailSubject =
+      subjectText && subjectText !== 'Subject'
+        ? `Contact: ${subjectText}`
+        : 'Contact Form Message';
+    const bodyLines = [
+      `Name: ${name || '-'}`,
+      `Email: ${email || '-'}`,
+      `Subject: ${subjectText || subjectValue || '-'}`,
+      '',
+      'Message:',
+      message || '-',
+    ];
+    const mailtoLink = `mailto:info@worktales.com?subject=${encodeURIComponent(
+      mailSubject
+    )}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+    window.location.href = mailtoLink;
+    contactForm.reset();
+  });
+}
+

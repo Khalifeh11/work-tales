@@ -122,7 +122,7 @@
         </p>
 
         <div class="hero-ctas">
-          <a href="#contact" class="btn btn-primary">Schedule a call <i class="fas fa-arrow-right"></i></a>
+          <a href="#contact" class="btn btn-primary">Book a consultation <i class="fas fa-arrow-right"></i></a>
           <a href="#services" class="btn btn-ghost">Explore services</a>
         </div>
       </div>
@@ -327,24 +327,88 @@
   <div class="container">
     <div class="section-title">Let&rsquo;s talk</div>
     <h2>Let&rsquo;s write your next <span class="accent">worktale</span>.</h2>
-    <p>
-      Whether you&rsquo;re hiring, building capability, or aligning your leadership team &mdash; start with a conversation. Pick a time that works and we&rsquo;ll listen first, then propose.
-    </p>
-    <div class="scheduler">
-      <iframe
-        class="scheduler-frame"
-        src="https://scheduler.recruitcrm.io/scheduler?config_id=7d47f2ee-6221-486e-abdf-6eff839f6ad5"
-        title="Schedule a call with Worktales"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <p class="scheduler-fallback">
-        Can&rsquo;t see the scheduler?
-        <a href="https://scheduler.recruitcrm.io/scheduler?config_id=7d47f2ee-6221-486e-abdf-6eff839f6ad5" target="_blank" rel="noopener">Open it in a new tab</a>
-        or email <a href="mailto:info@worktales.com?subject=Schedule%20a%20call">info@worktales.com</a>.
-      </p>
-    </div>
-    <div class="btns">
-      <a href="mailto:info@worktales.com?subject=Brochure%20request" class="btn btn-ghost">Request a brochure</a>
+
+
+    <div class="contact-card">
+      <!-- Left: contact information -->
+      <aside class="contact-info">
+        <span class="contact-eyebrow">Reach us directly</span>
+        <h3 class="contact-info-title">Contact Information</h3>
+
+        <ul class="contact-list">
+          <li class="contact-item">
+            <span class="contact-ico" aria-hidden="true"><i class="fas fa-location-dot"></i></span>
+            <div class="contact-item-body">
+              <span class="contact-item-label">Visit</span>
+              <a href="https://maps.google.com/?q=Georges+Katroux+Street+Badaro+Beirut" target="_blank" rel="noopener">Georges Katroux Street,<br>Badaro &mdash; Beirut, Lebanon</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <span class="contact-ico" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+            <div class="contact-item-body">
+              <span class="contact-item-label">Email</span>
+              <a href="mailto:info@worktales.com">info@worktales.com</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <span class="contact-ico" aria-hidden="true"><i class="fas fa-phone"></i></span>
+            <div class="contact-item-body">
+              <span class="contact-item-label">Call</span>
+              <a href="tel:+96181850817">+961 81 850 817</a>
+            </div>
+          </li>
+        </ul>
+
+        <a href="mailto:info@worktales.com?subject=Brochure%20request" class="contact-brochure">
+          Request a brochure <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- decorative geometric monogram -->
+        <svg class="contact-deco" viewBox="0 0 220 120" fill="none" aria-hidden="true">
+          <path d="M2 118V40a38 38 0 0 1 38-38h40" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M40 118V78a38 38 0 0 1 38-38h0" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M78 118a38 38 0 0 0 38-38 38 38 0 0 1 38-38" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="154" cy="42" r="3.5" fill="currentColor"/>
+          <path d="M116 118V96M154 118V80M192 118V58a38 38 0 0 1 26-37" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+      </aside>
+
+      <!-- Right: message form -->
+      <div class="contact-panel">
+        <h3 class="contact-panel-title">Send us a <span class="accent">message</span></h3>
+        <p class="contact-panel-sub">We typically reply within one business day.</p>
+
+        <form class="contact-form" novalidate>
+          <div class="contact-row">
+            <div class="form-group">
+              <label for="name" class="sr-only">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+              <label for="email" class="sr-only">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Email Address" required>
+            </div>
+          </div>
+          <div class="form-group form-select">
+            <label for="subject" class="sr-only">Subject</label>
+            <select id="subject" name="subject" required>
+              <option value="">Subject</option>
+              <option value="network">Talent hiring inquiry</option>
+              <option value="roles">Remote team setup</option>
+              <option value="general">Employment and compliance</option>
+              <option value="partnership">Partnership opportunity</option>
+              <option value="pricing">Talent community registration</option>
+              <option value="sourcing">Other</option>
+            </select>
+            <i class="fas fa-chevron-down form-select-chev" aria-hidden="true"></i>
+          </div>
+          <div class="form-group">
+            <label for="message" class="sr-only">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary contact-submit">Send Message <i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+        </form>
+      </div>
     </div>
   </div>
 </section>

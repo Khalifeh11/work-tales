@@ -1,0 +1,87 @@
+/* ============================================================
+   WORKTALES — Color tokens
+   A dark, executive palette: black canvas, signal orange,
+   deep maroon, and a cool sage for quiet accents.
+   ============================================================ */
+
+:root {
+  /* ---- Base neutrals (dark canvas) ---- */
+  --wt-black: #000000;
+  --wt-near-black: #050505;
+  --wt-ink-950: #060404;   /* section gradient mid-stop */
+  --wt-ink-900: #0c0a0a;   /* header glass base */
+  --wt-ink-850: #100c0c;
+  --wt-ink-800: #120e0e;   /* dropdown / node surfaces */
+  --wt-ink-700: #231f20;   /* card surface tint */
+  --wt-footer: #050303;
+
+  /* ---- Brand: orange (signal / action) ---- */
+  --wt-orange: #EF5023;
+  --wt-orange-bright: #FF7A3F;   /* gradient partner */
+  --wt-orange-hover: #FF6638;    /* primary button hover */
+  --wt-orange-glow: #FF8B5A;     /* core highlight */
+
+  /* ---- Brand: maroon (depth / warmth) ---- */
+  --wt-maroon: #4A1114;
+  --wt-maroon-deep: #190707;
+  --wt-maroon-darker: #1A0707;
+
+  /* ---- Brand: sage (cool quiet accent) ---- */
+  --wt-sage: #B3C9C6;
+
+  /* ---- Text neutrals ---- */
+  --wt-white: #F1F1F2;
+  --wt-gray: #8A8D8F;
+
+  /* ---- Translucent surfaces (sit over the dark canvas) ---- */
+  --wt-surface: rgba(35, 31, 32, 0.82);
+  --wt-surface-strong: rgba(74, 17, 20, 0.85);
+  --wt-surface-muted: rgba(35, 31, 32, 0.55);
+  --wt-glass-header: rgba(12, 10, 10, 0.55);
+  --wt-glass-header-scrolled: rgba(20, 16, 16, 0.85);
+  --wt-glass-menu: rgba(18, 14, 14, 0.96);
+
+  /* ---- Borders (hairlines over dark) ---- */
+  --wt-border: rgba(241, 241, 242, 0.10);
+  --wt-border-strong: rgba(241, 241, 242, 0.18);
+  --wt-border-orange: rgba(239, 80, 35, 0.25);
+  --wt-border-orange-strong: rgba(239, 80, 35, 0.55);
+
+  /* ---- Orange wash fills ---- */
+  --wt-orange-soft: rgba(239, 80, 35, 0.15);
+  --wt-orange-wash: rgba(239, 80, 35, 0.08);
+  --wt-orange-ring: rgba(239, 80, 35, 0.12);
+
+  /* ============================================================
+     SEMANTIC ALIASES — reference these in components
+     ============================================================ */
+  --color-bg: var(--wt-black);
+  --color-bg-elevated: var(--wt-ink-800);
+  --color-surface: var(--wt-surface);
+  --color-surface-card: var(--wt-surface-muted);
+  --color-surface-glass: var(--wt-glass-header);
+
+  --color-accent: var(--wt-orange);
+  --color-accent-hover: var(--wt-orange-hover);
+  --color-accent-bright: var(--wt-orange-bright);
+  --color-accent-soft: var(--wt-orange-soft);
+  --color-accent-deep: var(--wt-maroon);
+
+  --color-text: var(--wt-white);
+  --color-text-secondary: var(--wt-sage);
+  --color-text-muted: var(--wt-gray);
+  --color-text-on-accent: #ffffff;
+
+  --color-border: var(--wt-border);
+  --color-border-strong: var(--wt-border-strong);
+  --color-border-accent: var(--wt-border-orange);
+
+  /* ---- Signature gradients ---- */
+  --gradient-accent: linear-gradient(120deg, var(--wt-orange) 0%, var(--wt-orange-bright) 100%); /* @kind color */
+  --gradient-core: radial-gradient(circle at 30% 30%, var(--wt-orange-glow) 0%, var(--wt-orange) 35%, var(--wt-maroon) 80%, #1a0707 100%); /* @kind color */
+  --gradient-card: linear-gradient(180deg, rgba(35,31,32,0.40) 0%, rgba(0,0,0,0.60) 100%); /* @kind color */
+  --gradient-section: linear-gradient(180deg, #000 0%, var(--wt-ink-950) 50%, #000 100%); /* @kind color */
+  --gradient-hero-orange: radial-gradient(900px 600px at 15% 25%, rgba(239,80,35,0.18), transparent 60%); /* @kind color */
+  --gradient-hero-maroon: radial-gradient(700px 500px at 85% 70%, rgba(74,17,20,0.55), transparent 60%); /* @kind color */
+  --gradient-guarantee: linear-gradient(120deg, var(--wt-maroon) 0%, #190707 100%); /* @kind color */
+}

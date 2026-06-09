@@ -1,0 +1,59 @@
+/* ============================================================
+   WORKTALES — Typography tokens
+   One typeface (Montserrat). Headings run medium (500) with
+   tight negative tracking; eyebrows/labels run bold (700) and
+   UPPERCASE with wide positive tracking. Body is sage-on-black.
+   ============================================================ */
+
+:root {
+  /* ---- Families ---- */
+  --font-sans: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: var(--font-sans);
+  --font-body: var(--font-sans);
+
+  /* ---- Weights ---- */
+  --weight-regular: 400;
+  --weight-medium: 500;   /* default heading weight */
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 800;
+
+  /* ---- Fluid display / heading scale ---- */
+  --text-hero: clamp(2.1rem, 4.8vw, 4rem);      /* H1 hero */
+  --text-h1: clamp(2rem, 4.5vw, 3.4rem);         /* page hero H1 */
+  --text-h2: clamp(1.6rem, 3vw, 2.4rem);         /* section H2 */
+  --text-h2-sm: clamp(1.5rem, 2.6vw, 2.1rem);
+  --text-h3: clamp(1.4rem, 2.4vw, 2rem);
+  --text-stat: clamp(2.2rem, 4.5vw, 3.6rem);     /* big outcome numbers */
+
+  /* ---- Fixed component sizes ---- */
+  --text-card-title: 1.4rem;
+  --text-lede: clamp(1rem, 1.2vw, 1.12rem);
+  --text-body: 0.95rem;
+  --text-sm: 0.88rem;
+  --text-xs: 0.82rem;
+  --text-eyebrow: clamp(0.78rem, 1.05vw, 0.95rem);
+  --text-micro: 0.68rem;
+
+  /* ---- Line heights ---- */
+  --leading-tight: 1.15;     /* hero headlines */
+  --leading-heading: 1.2;
+  --leading-snug: 1.35;
+  --leading-body: 1.6;
+  --leading-relaxed: 1.65;
+
+  /* ---- Letter spacing ---- */
+  --tracking-tight: -0.025em;   /* large headlines */
+  --tracking-snug: -0.015em;    /* section headings */
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-eyebrow: 0.12em;   /* uppercase section titles */
+  --tracking-caps: 0.14em;      /* footer headings, tags */
+  --tracking-widest: 0.18em;    /* pillar numbers */
+
+  /* ---- Semantic aliases ---- */
+  --heading-weight: var(--weight-medium);
+  --heading-tracking: var(--tracking-snug);
+  --eyebrow-weight: var(--weight-bold);
+  --eyebrow-transform: uppercase; /* @kind other */
+}

@@ -1,0 +1,62 @@
+/* ============================================================
+   WORKTALES — Base element styling + small utilities
+   Kept minimal: sets the dark canvas, default type, and a few
+   helpers the specimen cards and components lean on.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ---- Eyebrow / section title ---- */
+.wt-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--color-accent);
+  font-size: var(--text-eyebrow);
+  font-weight: var(--weight-bold);
+}
+
+/* ---- Headings ---- */
+.wt-h2 {
+  font-size: var(--text-h2);
+  font-weight: var(--heading-weight);
+  letter-spacing: var(--heading-tracking);
+  line-height: var(--leading-heading);
+  margin: 0;
+}
+.wt-h2 .accent { color: var(--color-accent); }
+
+/* ---- Accent gradient text ---- */
+.wt-gradient-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- Card surface ---- */
+.wt-card {
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-2xl);
+  background: var(--gradient-card);
+}
+
+.wt-sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0, 0, 0, 0); border: 0;
+}
