@@ -358,12 +358,55 @@ button.nav-link {
 .hero-grid-bg {
   position: absolute; inset: 0; z-index: -1;
   background-image:
-    linear-gradient(rgba(239,80,35,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(239,80,35,0.06) 1px, transparent 1px);
+    linear-gradient(rgba(239,80,35,0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239,80,35,0.12) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 80%);
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 80%);
-  opacity: 0.55;
+  opacity: 0.8;
+}
+
+/* ============================================================
+   SECTION GRID TEXTURE — carries the hero grid rhythm down the page
+   ============================================================ */
+.pillars,
+.individuals,
+.outcomes,
+.whyb {
+  position: relative;
+  isolation: isolate; /* lets ::before sit above section bg, below content */
+}
+.pillars::before,
+.individuals::before,
+.outcomes::before,
+.whyb::before {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(239,80,35,0.11) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239,80,35,0.11) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 85% 70% at 15% 0%, #000 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 70% at 15% 0%, #000 30%, transparent 85%);
+}
+/* alternate anchor corner so repeated pillars sections don't feel stamped */
+.pillars:nth-child(even of .pillars)::before {
+  mask-image: radial-gradient(ellipse 85% 70% at 85% 0%, #000 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 70% at 85% 0%, #000 30%, transparent 85%);
+}
+/* "Why" bento section sits between the two pillars — anchor center top */
+.whyb::before {
+  mask-image: radial-gradient(ellipse 85% 70% at 50% 0%, #000 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 70% at 50% 0%, #000 30%, transparent 85%);
+}
+/* outcomes: fainter, tucked behind the heading — stats stay clinical */
+.outcomes::before {
+  background-image:
+    linear-gradient(rgba(239,80,35,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239,80,35,0.08) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 65% 50% at 10% 5%, #000 25%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 65% 50% at 10% 5%, #000 25%, transparent 80%);
 }
 
 .hero-inner {
@@ -860,7 +903,9 @@ button.nav-link {
    CLOSING CTA
    ============================================================ */
 .cta-band {
-  background: #000;
+  background:
+    radial-gradient(600px 320px at 50% 0%, rgba(239,80,35,0.06), transparent 70%),
+    #000;
   border-top: 1px solid var(--border);
   padding: clamp(64px, 8vw, 100px) 0;
   text-align: center;
