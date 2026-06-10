@@ -358,12 +358,12 @@ button.nav-link {
 .hero-grid-bg {
   position: absolute; inset: 0; z-index: -1;
   background-image:
-    linear-gradient(rgba(239,80,35,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(239,80,35,0.06) 1px, transparent 1px);
+    linear-gradient(rgba(239,80,35,0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239,80,35,0.12) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 80%);
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 80%);
-  opacity: 0.55;
+  opacity: 0.8;
 }
 
 .hero-inner {
@@ -1519,11 +1519,130 @@ button.nav-link {
   justify-content: center;
   align-items: center;
 }
-.insights-wheel {
-  display: block;
+
+/* ---- Four colour-energies compass (pure-CSS figure) ---- */
+.compass {
+  /* neutral trait colour preserved from the figure's design; --border and
+     --text inherit the site tokens. */
+  --text-secondary: rgba(245, 243, 240, 0.62);
+
+  position: relative;
   width: 100%;
   max-width: 480px;
-  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 7px;
+  isolation: isolate;
+}
+.energy-quad {
+  --e: #ffffff;          /* energy colour, set inline per quadrant */
+  --gx: 0%; --gy: 0%;    /* glow origin, set per corner class */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 196px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background:
+    radial-gradient(125% 125% at var(--gx) var(--gy),
+      color-mix(in srgb, var(--e) 42%, transparent) 0%,
+      color-mix(in srgb, var(--e) 11%, transparent) 32%,
+      transparent 62%),
+    rgba(255, 255, 255, 0.018);
+  overflow: hidden;
+  transition: background .4s ease, border-color .4s ease;
+}
+/* coloured edge highlight, masked to the glowing corner */
+.energy-quad::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid color-mix(in srgb, var(--e) 28%, transparent);
+  opacity: .5;
+  pointer-events: none;
+  -webkit-mask: radial-gradient(120% 120% at var(--gx) var(--gy), #000 0%, transparent 60%);
+  mask: radial-gradient(120% 120% at var(--gx) var(--gy), #000 0%, transparent 60%);
+}
+.energy-quad:hover {
+  background:
+    radial-gradient(125% 125% at var(--gx) var(--gy),
+      color-mix(in srgb, var(--e) 56%, transparent) 0%,
+      color-mix(in srgb, var(--e) 15%, transparent) 34%,
+      transparent 64%),
+    rgba(255, 255, 255, 0.018);
+}
+/* Glow origin = outer corner; content centred vertically and pushed to the
+   OUTER side so the central hub stays clear. */
+.q-tl { --gx: 0%;   --gy: 0%;   border-top-left-radius: 64px;
+  align-items: flex-start; text-align: left;  padding-right: 96px; }
+.q-tr { --gx: 100%; --gy: 0%;   border-top-right-radius: 64px;
+  align-items: flex-end;   text-align: right; padding-left: 96px; }
+.q-bl { --gx: 0%;   --gy: 100%; border-bottom-left-radius: 64px;
+  align-items: flex-start; text-align: left;  padding-right: 96px; }
+.q-br { --gx: 100%; --gy: 100%; border-bottom-right-radius: 64px;
+  align-items: flex-end;   text-align: right; padding-left: 96px; }
+
+.energy-head {
+  display: flex; align-items: center; gap: 11px;
+  margin-bottom: 10px;
+}
+.energy-name {
+  font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--text);
+  position: relative; padding-left: 18px;
+}
+.energy-name::before {
+  content: '';
+  position: absolute; left: 0; top: 50%;
+  width: 9px; height: 9px; border-radius: 50%;
+  transform: translateY(-50%);
+  background: var(--e);
+  box-shadow: 0 0 14px var(--e);
+}
+.q-tr .energy-name, .q-br .energy-name { padding-left: 0; padding-right: 18px; }
+.q-tr .energy-name::before, .q-br .energy-name::before { left: auto; right: 0; }
+
+.energy-traits {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  max-width: 22ch;
+}
+
+/* Centre hub — dark medallion with a quiet label; a thin conic ring of all
+   four energies floats just outside it, separated by a small gap. */
+.compass-hub {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  width: 110px; height: 110px; border-radius: 50%;
+  display: grid; place-items: center; text-align: center;
+  padding: 18px;
+  background: radial-gradient(circle at 50% 38%, #1b1b1b 0%, #0b0b0b 100%);
+  /* the solid-spread shadow paints the dark gap the ring floats in; matched
+     to the .pillars section background (#000→#060404→#000). */
+  box-shadow: 0 0 0 10px #050404, 0 16px 40px rgba(0, 0, 0, 0.65);
+}
+.compass-hub::before {
+  content: '';
+  position: absolute; inset: -6px; border-radius: 50%;
+  /* clockwise from top: blue → red → yellow → green, matching quadrants */
+  background: conic-gradient(from -90deg,
+    #E04438 0 25%, #F0B429 0 50%, #5BA13C 0 75%, #4A90D9 0 100%);
+  -webkit-mask: radial-gradient(circle, transparent 0 calc(50% - 2px), #000 calc(50% - 1px));
+  mask: radial-gradient(circle, transparent 0 calc(50% - 2px), #000 calc(50% - 1px));
+  opacity: .85;
+}
+.compass-hub-lbl {
+  font-size: 0.58rem; font-weight: 600; line-height: 1.5;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--text-secondary);
 }
 
 /* ---- How it works — 5 numbered steps (accent-rule ledger) ---- */
@@ -1558,9 +1677,13 @@ button.nav-link {
 @media (max-width: 980px) {
   .insights-grid { grid-template-columns: 1fr; gap: 40px; }
   .insights-wheel-wrap { order: -1; }
-  .insights-wheel { max-width: 380px; }
   .howit-grid { grid-template-columns: repeat(2, 1fr); gap: 30px 24px; }
 }
 @media (max-width: 520px) {
   .howit-grid { grid-template-columns: 1fr; }
+  .compass { gap: 6px; }
+  .energy-quad { min-height: 138px; padding: 18px; }
+  .q-tl, .q-bl { padding-right: 64px; }
+  .q-tr, .q-br { padding-left: 64px; }
+  .compass-hub { width: 88px; height: 88px; padding: 12px; }
 }
