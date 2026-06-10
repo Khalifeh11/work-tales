@@ -254,8 +254,97 @@
       </div>
 
       <div class="insights-wheel-wrap">
-        <img class="insights-wheel" src="assets/insights_discovery_dark_wheel.svg"
-             alt="The Insights Discovery colour wheel showing four energies: Cool Blue (cautious, precise, deliberate, questioning, formal), Fiery Red (competitive, demanding, determined, strong-willed, purposeful), Earth Green (caring, encouraging, sharing, patient, relaxed) and Sunshine Yellow (sociable, dynamic, demonstrative, enthusiastic, persuasive)." />
+        <!-- Insights Discovery four-colour wheel (premium) — reusable component.
+             Quadrants/arcs/hub are static; the four energy labels are rendered
+             from the INSIGHTS_ENERGIES data array by the script below. -->
+        <svg class="insights-wheel" viewBox="80 44 520 516" role="img"
+             aria-labelledby="iw-title iw-desc" xmlns="http://www.w3.org/2000/svg">
+          <title id="iw-title">Insights Discovery four-colour wheel, premium dark</title>
+          <desc id="iw-desc">Four-quadrant wheel with depth gradients and soft glow: Cool Blue, Fiery Red, Earth Green and Sunshine Yellow energies, each with three trait words.</desc>
+
+          <defs>
+            <linearGradient id="gBlue" gradientUnits="userSpaceOnUse" x1="167" y1="127" x2="340" y2="300">
+              <stop offset="0" stop-color="#21466A"/><stop offset="1" stop-color="#0A0E14"/>
+            </linearGradient>
+            <linearGradient id="gRed" gradientUnits="userSpaceOnUse" x1="513" y1="127" x2="340" y2="300">
+              <stop offset="0" stop-color="#642720"/><stop offset="1" stop-color="#130B0A"/>
+            </linearGradient>
+            <linearGradient id="gGreen" gradientUnits="userSpaceOnUse" x1="167" y1="473" x2="340" y2="300">
+              <stop offset="0" stop-color="#1C5236"/><stop offset="1" stop-color="#0A120E"/>
+            </linearGradient>
+            <linearGradient id="gYellow" gradientUnits="userSpaceOnUse" x1="513" y1="473" x2="340" y2="300">
+              <stop offset="0" stop-color="#5E4916"/><stop offset="1" stop-color="#13110B"/>
+            </linearGradient>
+            <!-- Hub gradient fades to the section background so it blends -->
+            <radialGradient id="gHub" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0" stop-color="#181310"/><stop offset="1" stop-color="var(--primary)"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Quadrant fills -->
+          <path d="M340 300 L95 300 A245 245 0 0 1 340 55 Z" fill="url(#gBlue)"/>
+          <path d="M340 300 L340 55 A245 245 0 0 1 585 300 Z" fill="url(#gRed)"/>
+          <path d="M340 300 L340 545 A245 245 0 0 1 95 300 Z" fill="url(#gGreen)"/>
+          <path d="M340 300 L585 300 A245 245 0 0 1 340 545 Z" fill="url(#gYellow)"/>
+
+          <!-- Quadrant arcs (wide glow + mid glow + crisp line) -->
+          <path d="M95 300 A245 245 0 0 1 340 55" fill="none" stroke="#4C9BE8" stroke-width="16" opacity="0.05"/>
+          <path d="M95 300 A245 245 0 0 1 340 55" fill="none" stroke="#4C9BE8" stroke-width="6" opacity="0.14"/>
+          <path d="M95 300 A245 245 0 0 1 340 55" fill="none" stroke="#5FA8EE" stroke-width="2"/>
+          <path d="M340 55 A245 245 0 0 1 585 300" fill="none" stroke="#E8584A" stroke-width="16" opacity="0.05"/>
+          <path d="M340 55 A245 245 0 0 1 585 300" fill="none" stroke="#E8584A" stroke-width="6" opacity="0.14"/>
+          <path d="M340 55 A245 245 0 0 1 585 300" fill="none" stroke="#F0685A" stroke-width="2"/>
+          <path d="M340 545 A245 245 0 0 1 95 300" fill="none" stroke="#5BAE78" stroke-width="16" opacity="0.06"/>
+          <path d="M340 545 A245 245 0 0 1 95 300" fill="none" stroke="#5BAE78" stroke-width="6" opacity="0.16"/>
+          <path d="M340 545 A245 245 0 0 1 95 300" fill="none" stroke="#6CC78D" stroke-width="2"/>
+          <path d="M585 300 A245 245 0 0 1 340 545" fill="none" stroke="#E0A92E" stroke-width="16" opacity="0.05"/>
+          <path d="M585 300 A245 245 0 0 1 340 545" fill="none" stroke="#E0A92E" stroke-width="6" opacity="0.14"/>
+          <path d="M585 300 A245 245 0 0 1 340 545" fill="none" stroke="#EDBA40" stroke-width="2"/>
+
+          <!-- Axes -->
+          <line x1="340" y1="58" x2="340" y2="542" stroke="#FFFFFF" stroke-width="1" opacity="0.04"/>
+          <line x1="98" y1="300" x2="582" y2="300" stroke="#FFFFFF" stroke-width="1" opacity="0.04"/>
+
+          <!-- Energy labels — populated from INSIGHTS_ENERGIES -->
+          <g id="iw-labels" text-anchor="middle"></g>
+
+          <!-- Center hub -->
+          <circle cx="340" cy="300" r="50" fill="none" stroke="#F0563A" stroke-width="6" opacity="0.10"/>
+          <circle cx="340" cy="300" r="50" fill="url(#gHub)" stroke="#F0563A" stroke-width="1" opacity="0.95"/>
+          <text x="340" y="296" text-anchor="middle" font-size="11" font-weight="500" letter-spacing="2" fill="#A8A8A8">FOUR</text>
+          <text x="340" y="311" text-anchor="middle" font-size="11" font-weight="500" letter-spacing="2" fill="#A8A8A8">ENERGIES</text>
+        </svg>
+        <script>
+          // Typed energy data — quadrant positions are derived from index
+          // (col = i % 2 → left/right, row = i >> 1 → top/bottom).
+          /** @type {{name: string, accentColor: string, traitColor: string, traits: string[]}[]} */
+          const INSIGHTS_ENERGIES = [
+            { name: "COOL BLUE",       accentColor: "#7DB8F2", traitColor: "#AECAE8", traits: ["cautious", "precise", "deliberate"] },
+            { name: "FIERY RED",       accentColor: "#F2867C", traitColor: "#DEACA4", traits: ["competitive", "determined", "purposeful"] },
+            { name: "EARTH GREEN",     accentColor: "#84D29D", traitColor: "#A9D2B7", traits: ["caring", "encouraging", "patient"] },
+            { name: "SUNSHINE YELLOW", accentColor: "#F0C955", traitColor: "#DCCD9C", traits: ["sociable", "dynamic", "enthusiastic"] },
+          ];
+          (function renderInsightsWheel() {
+            const NS = "http://www.w3.org/2000/svg";
+            const g = document.getElementById("iw-labels");
+            if (!g) return;
+            const text = (x, y, fill, size, weight, content) => {
+              const t = document.createElementNS(NS, "text");
+              t.setAttribute("x", x); t.setAttribute("y", y);
+              t.setAttribute("font-size", size); t.setAttribute("fill", fill);
+              if (weight) { t.setAttribute("font-weight", weight); t.setAttribute("letter-spacing", "2"); }
+              t.textContent = content;
+              g.appendChild(t);
+            };
+            INSIGHTS_ENERGIES.forEach((e, i) => {
+              const x = (i % 2 === 0) ? 223 : 457;
+              const headerY = (i < 2) ? 150 : 360;
+              text(x, headerY, e.accentColor, 17, 500, e.name);
+              // first trait sits 40 below the header, then 32 apart
+              e.traits.forEach((trait, j) => text(x, headerY + 40 + 32 * j, e.traitColor, 16, null, trait));
+            });
+          })();
+        </script>
       </div>
     </div>
 

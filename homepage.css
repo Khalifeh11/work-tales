@@ -1522,7 +1522,7 @@ button.nav-link {
 .insights-wheel {
   display: block;
   width: 100%;
-  max-width: 600px;
+  max-width: 480px;
   height: auto;
 }
 
