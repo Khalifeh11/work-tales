@@ -261,8 +261,8 @@ button.nav-link {
   color: var(--accent);
   font-size: 0.95rem;
 }
-.dropdown-item .label { font-weight: 600; font-size: 0.92rem; color: var(--text); }
-.dropdown-item .desc { font-size: 0.78rem; color: var(--text-secondary); margin-top: 2px; line-height: 1.45; }
+.dropdown-item .label { display: block; font-weight: 600; font-size: 0.92rem; color: var(--text); }
+.dropdown-item .desc { display: block; font-size: 0.78rem; color: var(--text-secondary); margin-top: 2px; line-height: 1.45; }
 
 .dropdown-divider {
   height: 1px; background: var(--border); margin: 6px 4px;
