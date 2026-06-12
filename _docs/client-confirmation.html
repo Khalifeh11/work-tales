@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Worktales — Website Update: For Your Confirmation</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+  :root{
+    --ink:#1a1a1a; --muted:#5b5b5b; --line:#e4e4e4;
+    --accent:#EF5023; --maroon:#4A1114; --teal:#7d9b97;
+    --soft:#f6f5f3;
+  }
+  *{box-sizing:border-box;}
+  @page{size:A4;margin:0;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Montserrat',Arial,sans-serif;color:var(--ink);font-size:11px;line-height:1.5;}
+  .page{width:210mm;height:297mm;overflow:hidden;padding:17mm 18mm 14mm;position:relative;page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;break-after:auto;}
+
+  /* Cover */
+  .cover{background:#1a1a1a;color:#fff;display:flex;flex-direction:column;justify-content:space-between;}
+  .brand{font-weight:800;font-size:30px;letter-spacing:-0.5px;}
+  .brand span{color:var(--accent);}
+  .cover h1{font-size:34px;font-weight:800;line-height:1.12;margin:0 0 14px;}
+  .cover h1 .ac{color:var(--accent);}
+  .cover .sub{color:#c9c9c9;font-size:13px;max-width:80%;}
+  .tag{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:7px 14px;border-radius:30px;margin-bottom:26px;}
+  .cover-foot{font-size:10px;color:#9a9a9a;border-top:1px solid #333;padding-top:14px;}
+  .cover-foot b{color:#fff;}
+
+  /* Content pages */
+  h2.sec{font-size:18px;font-weight:800;margin:0 0 4px;color:var(--maroon);}
+  .sec-kicker{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:18px;}
+  .lead{color:var(--muted);font-size:11.5px;margin:0 0 18px;max-width:95%;}
+
+  .pillars{display:flex;gap:10px;margin:6px 0 8px;}
+  .pillar{flex:1;background:var(--soft);border-radius:10px;padding:14px 13px;border-top:3px solid var(--accent);}
+  .pillar .n{font-size:10px;color:var(--accent);font-weight:700;}
+  .pillar h3{margin:3px 0 5px;font-size:14px;font-weight:800;}
+  .pillar p{margin:0;color:var(--muted);font-size:10px;}
+  .pillar .from{margin-top:9px;font-size:9px;color:#999;border-top:1px solid var(--line);padding-top:7px;}
+
+  .row{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);}
+  .row:last-child{border-bottom:none;}
+  .num{flex:0 0 26px;height:26px;border-radius:50%;background:var(--maroon);color:#fff;font-weight:700;font-size:11px;display:flex;align-items:center;justify-content:center;}
+  .row .body{flex:1;}
+  .row h4{margin:1px 0 3px;font-size:12px;font-weight:700;}
+  .row p{margin:0;color:var(--muted);font-size:10.5px;}
+  .must{display:inline-block;background:#fde9e3;color:var(--accent);font-weight:700;font-size:8px;letter-spacing:.5px;text-transform:uppercase;padding:2px 7px;border-radius:20px;margin-left:6px;vertical-align:middle;}
+
+  .group-label{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--maroon);font-weight:700;margin:18px 0 2px;border-bottom:2px solid var(--accent);display:inline-block;padding-bottom:3px;}
+
+  .note{background:var(--soft);border-left:3px solid var(--accent);padding:11px 14px;border-radius:0 8px 8px 0;font-size:10.5px;color:#444;margin-top:14px;}
+  .note b{color:var(--ink);}
+
+  .signoff{margin-top:26px;border-top:1px solid var(--line);padding-top:16px;}
+  .signoff h4{margin:0 0 14px;font-size:12px;}
+  .sig-line{display:flex;gap:26px;margin-top:30px;}
+  .sig-line div{flex:1;border-top:1px solid #999;padding-top:5px;font-size:9px;color:var(--muted);}
+
+  .foot{position:absolute;bottom:10mm;left:18mm;right:18mm;font-size:8.5px;color:#aaa;display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:7px;}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="page cover">
+  <div>
+    <div class="brand">work<span>•</span>tales</div>
+  </div>
+  <div>
+    <span class="tag">Website Update — For Your Confirmation</span>
+    <h1>Repositioning the site around<br><span class="ac">sales talent &amp; performance.</span></h1>
+    <p class="sub">A summary of the changes we'll make to the Worktales website based on your new Company Profile — and the points we'd like you to confirm before we begin.</p>
+  </div>
+  <div class="cover-foot">
+    Prepared for <b>Worktales</b> &nbsp;·&nbsp; Built in Beirut. Designed for Global Execution. &nbsp;·&nbsp; www.worktales.com
+  </div>
+</section>
+
+<!-- PAGE 2: WHAT'S CHANGING -->
+<section class="page">
+  <div class="sec-kicker">What we're going to do</div>
+  <h2 class="sec">The site narrows to a sales focus.</h2>
+  <p class="lead">Your new profile shifts Worktales from a broad talent, training, and culture firm to a <b>sales-exclusive</b> firm. We keep the existing website layout and design — this is a content and messaging update, not a rebuild. The three service pillars are renamed, two of today's pages merge, and a new pillar takes the freed slot.</p>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="n">01</div>
+      <h3>Attract</h3>
+      <p>Hire sales talent that can deliver results.</p>
+      <div class="from">From today's "Talent Solutions" page</div>
+    </div>
+    <div class="pillar">
+      <div class="n">02</div>
+      <h3>Develop</h3>
+      <p>Build the skills required to win and grow business.</p>
+      <div class="from">"Training &amp; Development" + "Culture &amp; Leadership" merged</div>
+    </div>
+    <div class="pillar">
+      <div class="n">03</div>
+      <h3>Accelerate</h3>
+      <p>Turn potential into consistent performance.</p>
+      <div class="from">New page — 100-Day Sales Acceleration Program</div>
+    </div>
+  </div>
+
+  <div class="group-label">Alongside the pillars</div>
+  <div class="row">
+    <div class="num">+</div>
+    <div class="body"><h4>New tagline &amp; messaging</h4><p>"Empowering People. Unlocking Sales Performance." All headline and supporting copy reframed around sales talent and sales performance.</p></div>
+  </div>
+  <div class="row">
+    <div class="num">+</div>
+    <div class="body"><h4>Updated navigation</h4><p>The "For Organizations" menu surfaces the pillar names — Attract / Develop / Accelerate — each with a short description.</p></div>
+  </div>
+  <div class="row">
+    <div class="num">+</div>
+    <div class="body"><h4>"For Salespeople" menu</h4><p>Today's "For Individuals" menu is renamed and its content (talent pool, webinars) reframed toward sales professionals.</p></div>
+  </div>
+  <div class="row">
+    <div class="num">+</div>
+    <div class="body"><h4>Refreshed outcomes &amp; contact</h4><p>Homepage outcome figures and contact details updated to match the profile.</p></div>
+  </div>
+
+  <div class="foot"><span>Worktales — Website Update</span><span>Page 2</span></div>
+</section>
+
+<!-- PAGE 3: WHAT WE NEED YOU TO CONFIRM -->
+<section class="page">
+  <div class="sec-kicker">For your confirmation</div>
+  <h2 class="sec">Please review and confirm.</h2>
+  <p class="lead">A few points either change your public message or remove existing content, so we'd like your sign-off before we start. Items marked <span class="must">Must confirm</span> are the most important.</p>
+
+  <div class="group-label">Positioning &amp; naming</div>
+  <div class="row"><div class="num">1</div><div class="body"><h4>Sales-exclusive shift</h4><p>All non-sales / general-talent language is removed, not just de-emphasized.</p></div></div>
+  <div class="row"><div class="num">2</div><div class="body"><h4>New tagline</h4><p>"Empowering People. Unlocking Sales Performance." / "Built in Beirut. Designed for Global Execution."</p></div></div>
+  <div class="row"><div class="num">3</div><div class="body"><h4>Pillar names public-facing</h4><p>Attract / Develop / Accelerate become the customer-facing labels.</p></div></div>
+  <div class="row"><div class="num">4</div><div class="body"><h4>"Accelerate" as the final name<span class="must">Must confirm</span></h4><p>For the new 100-Day program pillar — or do you have a preferred name?</p></div></div>
+
+  <div class="group-label">Content being merged or removed</div>
+  <div class="row"><div class="num">5</div><div class="body"><h4>Culture &amp; Leadership loses its own page<span class="must">Must confirm</span></h4><p>Its content folds into Develop; there is no standalone Culture/Leadership page.</p></div></div>
+  <div class="row"><div class="num">6</div><div class="body"><h4>Develop reorganizes to three Impact lanes<span class="must">Must confirm</span></h4><p>Today's five focus areas (incl. AI/Future Skills, Organizational Execution, general Communication, Human Skills) are replaced by Personal / Client / Team Impact. The broad non-sales topics fall away.</p></div></div>
+  <div class="row"><div class="num">7</div><div class="body"><h4>Insights Discovery moves under Develop</h4><p>Confirm Develop is the right home for the Insights Discovery partnership.</p></div></div>
+
+  <div class="foot"><span>Worktales — Website Update</span><span>Page 3</span></div>
+</section>
+
+<!-- PAGE 4: CLAIMS, OPTIONS, SIGN-OFF -->
+<section class="page">
+  <div class="group-label" style="margin-top:0;">Claims &amp; facts to verify</div>
+  <div class="row"><div class="num">8</div><div class="body"><h4>Outcome figures<span class="must">Must confirm</span></h4><p>90% client satisfaction · 65% reduction in hiring cost · 92% retention at 12 months · talent ready in under 2 weeks. Confirm these are accurate and approved to publish publicly.</p></div></div>
+  <div class="row"><div class="num">9</div><div class="body"><h4>Contact details</h4><p>info@worktales.com · +961 81 850817 · Khanamerian Bldg, 5th Floor, Badaro – Beirut.</p></div></div>
+
+  <div class="group-label">Choices &amp; optional additions</div>
+  <div class="row"><div class="num">10</div><div class="body"><h4>"For Salespeople" wording</h4><p>Preferred label: <b>For Salespeople</b> / For Sales Professionals / For Sales Talent. (We suggest "Sales Professionals" to match the profile's voice.)</p></div></div>
+  <div class="row"><div class="num">11</div><div class="body"><h4>About / leadership page</h4><p>The profile includes a strong Managing Partner bio (Alhasan Khalife, ICF-Accredited Coach). Build an About page from it now, or leave for later?</p></div></div>
+  <div class="row"><div class="num">12</div><div class="body"><h4>Profile photography</h4><p>Use the profile's photos (impact images, leadership headshot) on the site, or keep the current text/graphic style?</p></div></div>
+
+  <div class="note"><b>Next step:</b> Once you confirm the points above — especially the "Must confirm" items — we'll proceed with the update. Anything you'd like changed, just note it beside the item.</div>
+
+  <div class="signoff">
+    <h4>Approval</h4>
+    <div class="sig-line">
+      <div>Name</div>
+      <div>Signature</div>
+      <div>Date</div>
+    </div>
+  </div>
+
+  <div class="foot"><span>Worktales — Website Update</span><span>Page 4</span></div>
+</section>
+
+</body>
+</html>

@@ -4,5 +4,8 @@
 # Screenshot artifacts
 hex-*.png
 
+# macOS junk
+.DS_Store
+
 # folders to ignore
 
