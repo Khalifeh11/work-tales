@@ -6090,4 +6090,9 @@ padding: 40px 0 20px;
     .webinar-aside {
         grid-template-columns: 1fr;
     }
+
+    .webinar-badge,
+    .webinar-hero__cta {
+        justify-self: center;
+    }
 }
