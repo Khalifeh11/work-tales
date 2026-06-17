@@ -1780,7 +1780,7 @@ button.nav-link {
 }
 .welcome-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   gap: clamp(36px, 5vw, 72px);
   align-items: center;
 }
@@ -1802,7 +1802,7 @@ button.nav-link {
 }
 .welcome-portrait img {
   width: 100%;
-  max-width: 460px;
+  max-width: 540px;
   margin: 0 auto;
   display: block;
   filter: drop-shadow(0 30px 50px rgba(0,0,0,0.5));
