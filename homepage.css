@@ -563,25 +563,49 @@ button.nav-link {
 
 .hero-node {
   position: absolute;
-  width: 108px;
-  padding: 10px 8px;
-  text-align: center;
-  background: rgba(18,14,14,0.92);
+  width: max-content;
+  padding: 8px 14px 8px 22px;
+  text-align: left;
+  background:
+    linear-gradient(155deg, rgba(32,22,20,0.94) 0%, rgba(14,10,10,0.92) 75%);
   border: 1px solid var(--border-strong);
   border-radius: 12px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent);
   white-space: nowrap;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  line-height: 1.2;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.4);
   box-sizing: border-box;
 }
+/* leading accent dot, aligned to the title */
+.hero-node::before {
+  content: '';
+  position: absolute;
+  top: 13px; left: 11px;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 7px rgba(239,80,35,0.75);
+}
+.hn-word {
+  display: block;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  line-height: 1.2;
+}
+.hn-verb {
+  display: block;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  line-height: 1.25;
+}
 /* Anchor each node by its center so percent offsets stay inside the box. */
-.hero-node.h1 { top: 8%;   left: 50%; transform: translate(-50%, 0); }
+.hero-node.h1 { top: 10%;  left: 50%; transform: translate(-50%, 0); }
 .hero-node.h2 { bottom: 8%; left: 18%; transform: translate(-50%, 0); }
 .hero-node.h3 { bottom: 8%; left: 82%; transform: translate(-50%, 0); }
 
@@ -1181,7 +1205,10 @@ button.nav-link {
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .hero-meta { grid-template-columns: 1fr; gap: 18px; }
   .hero-meta-item + .hero-meta-item::before { display: none; }
-  .hero-node { width: 96px; font-size: 0.58rem; letter-spacing: 0.02em; padding: 8px 6px; }
+  .hero-node { padding: 7px 12px 7px 20px; }
+  .hero-node::before { top: 12px; left: 10px; }
+  .hero-node .hn-word { font-size: 0.6rem; letter-spacing: 0.04em; }
+  .hero-node .hn-verb { font-size: 0.52rem; }
   .indiv-card { padding: 28px 22px; }
 }
 
