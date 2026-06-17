@@ -428,7 +428,7 @@ button.nav-link {
   margin-bottom: 18px;
 }
 .hero-eyebrow .pulse {
-  width: 8px; height: 8px; border-radius: 50%;
+  width: 8px; height: 8px; flex: 0 0 8px; aspect-ratio: 1; border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 0 rgba(239,80,35,0.7);
   animation: pulse 2s infinite;
