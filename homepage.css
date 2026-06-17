@@ -1782,7 +1782,7 @@ button.nav-link {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   gap: clamp(36px, 5vw, 72px);
-  align-items: center;
+  align-items: start;
 }
 .welcome-portrait {
   position: relative;
@@ -1894,6 +1894,9 @@ button.nav-link {
 }
 
 /* ---- FAQ accordion (native details/summary, no JS) ---- */
+.faq .pillars-intro { text-align: center; }
+.faq .pillars-intro .section-title { text-align: center; }
+.faq .pillars-intro h2 { margin-left: auto; margin-right: auto; }
 .faq-list {
   max-width: 860px;
   margin: 0 auto;
