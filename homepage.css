@@ -1457,7 +1457,8 @@ button.nav-link {
   background: linear-gradient(180deg, rgba(35,31,32,0.4) 0%, rgba(0,0,0,0.6) 100%);
   transition: transform .35s ease, border-color .35s ease;
 }
-.whyb-card:hover { transform: translateY(-4px); }
+.whyb-card:hover { transform: translateY(-4px); border-color: rgba(239,80,35,0.45); }
+.whyb-card.is-accent:hover { border-color: transparent; }
 .whyb-card.col-4 { grid-column: span 4; }
 .whyb-card.col-8 { grid-column: span 8; }
 .whyb-card.is-accent {
@@ -1957,6 +1958,307 @@ button.nav-link {
 @keyframes faqReveal {
   from { opacity: 0; transform: translateY(-6px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   ACCELERATE — Why Accelerate (waw) feature section
+   ============================================================ */
+.waw-wrap { display: flex; flex-direction: column; gap: 20px; }
+
+.waw-banner {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ef5023 0%, #c53a15 55%, #8c2610 100%);
+  position: relative;
+  min-height: 220px;
+}
+.waw-banner::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(700px 350px at 10% 60%, rgba(255,255,255,0.09), transparent 55%);
+  pointer-events: none;
+}
+.waw-banner-body {
+  padding: 40px 44px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+.waw-banner-num {
+  display: block;
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: rgba(255,255,255,0.11);
+  margin-bottom: 12px;
+}
+.waw-banner-ico {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 50px; height: 50px;
+  border-radius: 13px;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.28);
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+}
+.waw-banner-body h3 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+.waw-banner-body p {
+  font-size: 0.96rem;
+  color: rgba(255,255,255,0.86);
+  line-height: 1.7;
+  max-width: 52ch;
+  margin: 0;
+}
+.waw-banner-graphic {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  background: rgba(0,0,0,0.15);
+  border-left: 1px solid rgba(255,255,255,0.08);
+}
+.waw-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.waw-ring.r1 { width: 210px; height: 210px; }
+.waw-ring.r2 { width: 136px; height: 136px; border-color: rgba(255,255,255,0.18); }
+.waw-ring.r3 { width: 66px; height: 66px; background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.26); }
+.waw-ring-ico { position: relative; z-index: 1; font-size: 2.4rem; color: rgba(255,255,255,0.45); }
+
+.waw-four {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.waw-feat {
+  position: relative;
+  padding: 32px 28px;
+  border: 1px solid var(--border-strong);
+  border-radius: 18px;
+  background: linear-gradient(160deg, rgba(35,31,32,0.5) 0%, rgba(0,0,0,0.7) 100%);
+  overflow: hidden;
+  transition: transform .35s ease, border-color .35s ease;
+}
+.waw-feat::after {
+  content: attr(data-num);
+  position: absolute;
+  right: 20px; top: 16px;
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--accent);
+  opacity: 0.07;
+  line-height: 1;
+  pointer-events: none;
+  transition: opacity .35s ease;
+}
+.waw-feat:hover {
+  transform: translateY(-4px);
+  border-color: rgba(239,80,35,0.45);
+}
+.waw-feat:hover::after { opacity: 0.15; }
+.waw-feat-ico {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 46px; height: 46px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(239,80,35,0.2);
+  color: var(--accent);
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+  transition: background .35s ease, border-color .35s ease;
+}
+.waw-feat:hover .waw-feat-ico {
+  background: rgba(239,80,35,0.2);
+  border-color: rgba(239,80,35,0.42);
+}
+.waw-feat h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.waw-feat p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 820px) {
+  .waw-banner { grid-template-columns: 1fr; min-height: auto; }
+  .waw-banner-graphic { display: none; }
+  .waw-four { grid-template-columns: 1fr; }
+  .waw-feat:hover { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .waw-feat, .waw-feat-ico { transition: none; }
+}
+
+/* ============================================================
+   ACCELERATE — 100-day timeline
+   ============================================================ */
+.acc-timeline {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 0 20px;
+  align-items: stretch;
+}
+
+.acc-phase {
+  position: relative;
+  border: 1px solid var(--border-strong);
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(160deg, rgba(35,31,32,0.5) 0%, rgba(0,0,0,0.7) 100%);
+  transition: transform .35s ease, border-color .35s ease;
+  display: flex;
+  flex-direction: column;
+}
+.acc-phase:hover {
+  transform: translateY(-4px);
+  border-color: rgba(239,80,35,0.5);
+}
+.acc-phase--final {
+  border-color: rgba(239,80,35,0.28);
+  background: linear-gradient(160deg, rgba(239,80,35,0.07) 0%, rgba(0,0,0,0.72) 100%);
+}
+
+.acc-phase-marker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.acc-phase-num {
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+  opacity: 0.22;
+  transition: opacity .35s ease;
+}
+.acc-phase--mid .acc-phase-num  { opacity: 0.55; }
+.acc-phase--final .acc-phase-num { opacity: 1; }
+.acc-phase:hover .acc-phase-num { opacity: 1; }
+
+.acc-phase-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid rgba(239,80,35,0.25);
+  border-radius: 100px;
+  padding: 5px 12px;
+  white-space: nowrap;
+}
+
+.acc-phase-body {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.acc-phase-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(239,80,35,0.2);
+  color: var(--accent);
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+  transition: background .35s ease, border-color .35s ease;
+}
+.acc-phase:hover .acc-phase-icon {
+  background: rgba(239,80,35,0.2);
+  border-color: rgba(239,80,35,0.45);
+}
+
+.acc-phase-body h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.acc-phase-sub {
+  font-size: 0.72rem;
+  color: var(--accent-light);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 20px;
+}
+
+.acc-phase-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.acc-phase-list li {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+.acc-phase-list li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px;
+  width: 10px; height: 1.5px;
+  background: var(--accent);
+}
+
+.acc-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 56px;
+  color: var(--accent);
+  font-size: 1rem;
+  opacity: 0.35;
+}
+
+@media (max-width: 860px) {
+  .acc-timeline {
+    grid-template-columns: 1fr;
+    gap: 16px 0;
+  }
+  .acc-arrow { display: none; }
+  .acc-phase:hover { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acc-phase { transition: none; }
+  .acc-phase-icon { transition: none; }
 }
 
 /* ---- About-page responsive ---- */
