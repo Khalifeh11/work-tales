@@ -496,7 +496,7 @@ button.nav-link {
 }
 .hero-meta {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-top: 0;              /* spacing is owned by the hero's space-between */
   padding-top: 24px;
@@ -761,6 +761,36 @@ button.nav-link {
   text-transform: uppercase;
   letter-spacing: 0.14em;
   margin-bottom: 18px;
+}
+/* Homepage pillar cards: icon left, single title + subtitle stacked beside it */
+.pillar-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.pillar-head .pillar-icon {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+.pillar-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.pillar-head .pillar-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+}
+.pillar-head .pillar-num {
+  display: inline;
+  margin: 0;
+  font-size: inherit;
+  letter-spacing: 0.02em;
+}
+.pillar-head .pillar-subtitle {
+  margin-bottom: 0;
 }
 .pillar-desc {
   font-size: 0.95rem;
