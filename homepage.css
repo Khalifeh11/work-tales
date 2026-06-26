@@ -1588,7 +1588,7 @@ button.nav-link {
   margin: 0 0 8px;
 }
 .flowstep-out {
-  font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;
+  font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;
   margin: 0 auto; max-width: 26ch;
 }
 @media (max-width: 820px) {
