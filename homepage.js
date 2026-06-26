@@ -18,7 +18,7 @@ navToggle.addEventListener('click', () => {
   navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
 });
 
-// Dropdowns — click on mobile, hover/focus on desktop (CSS handles those)
+// Dropdowns - click on mobile, hover/focus on desktop (CSS handles those)
 const dropdowns = document.querySelectorAll('.nav-menu .has-dropdown');
 const closeMobileMenu = () => {
   navMenu.classList.remove('open');

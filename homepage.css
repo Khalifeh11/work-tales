@@ -1,5 +1,5 @@
 /* ============================================================
-   WORKTALES — Homepage stylesheet
+   WORKTALES - Homepage stylesheet
    Canonical design tokens for the site:
    - Black background #000
    - Accent orange #EF5023
@@ -376,7 +376,7 @@ button.nav-link {
 }
 
 /* ============================================================
-   SECTION GRID TEXTURE — carries the hero grid rhythm down the page
+   SECTION GRID TEXTURE - carries the hero grid rhythm down the page
    ============================================================ */
 .pillars,
 .individuals,
@@ -404,12 +404,12 @@ button.nav-link {
   mask-image: radial-gradient(ellipse 85% 70% at 85% 0%, #000 30%, transparent 85%);
   -webkit-mask-image: radial-gradient(ellipse 85% 70% at 85% 0%, #000 30%, transparent 85%);
 }
-/* "Why" bento section sits between the two pillars — anchor center top */
+/* "Why" bento section sits between the two pillars - anchor center top */
 .whyb::before {
   mask-image: radial-gradient(ellipse 85% 70% at 50% 0%, #000 30%, transparent 85%);
   -webkit-mask-image: radial-gradient(ellipse 85% 70% at 50% 0%, #000 30%, transparent 85%);
 }
-/* outcomes: fainter, tucked behind the heading — stats stay clinical */
+/* outcomes: fainter, tucked behind the heading - stats stay clinical */
 .outcomes::before {
   background-image:
     linear-gradient(rgba(239,80,35,0.08) 1px, transparent 1px),
@@ -533,7 +533,7 @@ button.nav-link {
   margin-top: 6px;
 }
 
-/* Hero visual — abstract three-pillar emblem
+/* Hero visual - abstract three-pillar emblem
    Robust sizing: width fills column up to a max, square via padding-bottom
    trick (more reliable than aspect-ratio inside flexible grid tracks).
    All children are absolutely positioned so they're constrained to .hero-visual. */
@@ -567,7 +567,7 @@ button.nav-link {
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* Traveling glow dots — the ring itself spins, so a marker on its edge
+/* Traveling glow dots - the ring itself spins, so a marker on its edge
    orbits with it, making the (intentionally slow) rotation readable. */
 .hero-orbit.outer::before,
 .hero-orbit.inner::before {
@@ -654,7 +654,7 @@ button.nav-link {
 .hero-node.h3 { bottom: 8%; left: 82%; transform: translate(-50%, 0); }
 
 /* ============================================================
-   PILLARS — Three-pillar overview
+   PILLARS - Three-pillar overview
    ============================================================ */
 .pillars {
   position: relative;
@@ -884,7 +884,7 @@ button.nav-link {
 }
 
 /* ============================================================
-   FOR INDIVIDUALS — talent pool + webinars
+   FOR INDIVIDUALS - talent pool + webinars
    ============================================================ */
 .individuals {
   position: relative;
@@ -909,7 +909,7 @@ button.nav-link {
 }
 
 /* Pill eyebrow: same small size as .section-title (uppercase/accent/
-   spacing inherited) — promoted from floating label to an object so the
+   spacing inherited) - promoted from floating label to an object so the
    crossing registers, without ever outranking the headline. */
 .audience-eyebrow {
   display: inline-flex;
@@ -1013,7 +1013,7 @@ button.nav-link {
 }
 .webinar-register.is-disabled { color: var(--muted); cursor: default; }
 
-/* Contact card — two-pane (info + message form) */
+/* Contact card - two-pane (info + message form) */
 .contact-card {
   position: relative;
   max-width: 1080px;
@@ -1313,7 +1313,7 @@ button.nav-link {
 }
 
 /* ============================================================
-   DETAIL PAGE (recruitment.html) — header + advantage grid
+   DETAIL PAGE (recruitment.html) - header + advantage grid
    ============================================================ */
 .page-hero {
   position: relative;
@@ -1332,7 +1332,7 @@ button.nav-link {
   flex-direction: column;
   gap: clamp(28px, 4vh, 56px);   /* min separation to the meta strip */
 }
-/* The About intro is editorial (image + narrative, no meta strip) — keep it
+/* The About intro is editorial (image + narrative, no meta strip) - keep it
    padding-driven rather than forcing it to full viewport with empty space. */
 .page-hero.about-intro {
   min-height: auto;
@@ -1617,7 +1617,7 @@ button.nav-link {
   overflow: hidden;
   isolation: isolate;
 }
-.flow-stage::before {                /* soft interior glow — keeps it off "flat box" */
+.flow-stage::before {                /* soft interior glow - keeps it off "flat box" */
   content: '';
   position: absolute; z-index: -1; inset: 0;
   background: radial-gradient(58% 85% at 50% -5%, rgba(239,80,35,0.14), transparent 70%);
@@ -1674,7 +1674,7 @@ button.nav-link {
 }
 
 /* ============================================================
-   TRAINING & DEVELOPMENT (02 / Build) — detail page
+   TRAINING & DEVELOPMENT (02 / Build) - detail page
    ============================================================ */
 
 /* ---- Hero aside: program-formats card ---- */
@@ -1697,7 +1697,7 @@ button.nav-link {
 .fmt-note { font-size: 0.76rem; color: var(--text-secondary); margin-top: 2px; }
 
 /* ============================================================
-   CULTURE & LEADERSHIP (03 / Connect) — detail page
+   CULTURE & LEADERSHIP (03 / Connect) - detail page
    ============================================================ */
 
 /* ---- Hero headline: longer than other detail pages, so cap a touch
@@ -1731,7 +1731,7 @@ button.nav-link {
   margin: 0;
 }
 
-/* ---- Insights Discovery — copy + four colour energies ---- */
+/* ---- Insights Discovery - copy + four colour energies ---- */
 .insights-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
@@ -1849,7 +1849,7 @@ button.nav-link {
   max-width: 22ch;
 }
 
-/* Centre hub — dark medallion with a quiet label; a thin conic ring of all
+/* Centre hub - dark medallion with a quiet label; a thin conic ring of all
    four energies floats just outside it, separated by a small gap. */
 .compass-hub {
   position: absolute; left: 50%; top: 50%;
@@ -1879,7 +1879,7 @@ button.nav-link {
   color: var(--text-secondary);
 }
 
-/* ---- How it works — 5 numbered steps (accent-rule ledger) ---- */
+/* ---- How it works - 5 numbered steps (accent-rule ledger) ---- */
 .howit-head { margin-top: clamp(52px, 6vw, 80px); margin-bottom: clamp(28px, 3.2vw, 40px); }
 .howit-title {
   font-size: clamp(1.5rem, 2.8vw, 2.2rem);
@@ -1923,7 +1923,7 @@ button.nav-link {
 }
 
 /* ============================================================
-   ABOUT PAGE — hero visual, welcome message, FAQ
+   ABOUT PAGE - hero visual, welcome message, FAQ
    ============================================================ */
 
 /* ---- About Us: editorial intro split (image + narrative) ---- */
@@ -2160,7 +2160,7 @@ button.nav-link {
 }
 
 /* ============================================================
-   ACCELERATE — Why Accelerate (waw) feature section
+   ACCELERATE - Why Accelerate (waw) feature section
    ============================================================ */
 .waw-wrap { display: flex; flex-direction: column; gap: 20px; }
 
@@ -2309,7 +2309,7 @@ button.nav-link {
 }
 
 /* ============================================================
-   ACCELERATE — 100-day timeline
+   ACCELERATE - 100-day timeline
    ============================================================ */
 .acc-timeline {
   display: grid;
