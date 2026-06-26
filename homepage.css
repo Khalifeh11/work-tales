@@ -1399,6 +1399,26 @@ button.nav-link {
 .page-hero-copy { min-width: 0; max-width: 640px; }
 .page-hero .hero-ctas { margin-top: 28px; }
 
+/* Detail-page heroes read less "flat black" than the shared defaults:
+   warmer multi-point accent wash (with a glow behind the right-side figure)
+   and a brighter, wider grid. Homepage hero (.hero) keeps its subtler look. */
+.page-hero .hero-bg {
+  background:
+    radial-gradient(760px 540px at 14% 16%, rgba(239,80,35,0.24), transparent 60%),
+    radial-gradient(680px 620px at 86% 64%, rgba(140,38,16,0.60), transparent 62%),
+    radial-gradient(440px 380px at 74% 30%, rgba(239,80,35,0.18), transparent 60%),
+    linear-gradient(180deg, #0b0807 0%, #000 64%);
+}
+.page-hero .hero-grid-bg {
+  background-image:
+    linear-gradient(rgba(239,80,35,0.17) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239,80,35,0.17) 1px, transparent 1px);
+  background-size: 58px 58px;
+  mask-image: radial-gradient(ellipse 94% 80% at 50% 30%, #000 40%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 94% 80% at 50% 30%, #000 40%, transparent 90%);
+  opacity: 1;
+}
+
 .hire-card {
   position: relative;
   width: 100%;
@@ -1454,6 +1474,7 @@ button.nav-link {
 .is-active .step-name { color: var(--accent); }
 .step-note { font-size: 0.76rem; color: var(--text-secondary); margin-top: 2px; }
 
+.hero-proof { grid-template-columns: repeat(3, 1fr); }
 .hero-proof .num { font-size: 1.35rem; }
 
 /* ---- Guarantee banner (why-hire) ---- */
@@ -1481,53 +1502,11 @@ button.nav-link {
 .guarantee-body p { margin: 0; color: var(--text-secondary); font-size: 0.92rem; max-width: 60ch; }
 .guarantee .btn { white-space: nowrap; }
 
-/* ---- Lebanese advantage: editorial split ---- */
-.lebanon-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: clamp(40px, 6vw, 80px);
-  align-items: center;
-}
-.lebanon-intro { position: relative; isolation: isolate; }
-.lebanon-map {
-  position: absolute; z-index: -1;
-  right: -6%; bottom: -22%;
-  width: min(320px, 78%);
-  height: auto;
-  opacity: 0.38;
-  pointer-events: none;
-}
-.lebanon-intro h2 {
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  font-weight: 500; line-height: 1.2; letter-spacing: -0.015em;
-  margin: 0 0 16px;
-}
-.lebanon-intro h2 .accent { color: var(--accent); }
-.lebanon-intro p { color: var(--text-secondary); font-size: 0.98rem; line-height: 1.7; max-width: 42ch; margin: 0; }
-
-.lebanon-list { list-style: none; margin: 0; padding: 0; }
-.lebanon-list li {
-  display: grid; grid-template-columns: 48px 1fr; gap: 18px; align-items: start;
-  padding: 22px 0;
-  border-top: 1px solid var(--border-strong);
-}
-.lebanon-list li:last-child { border-bottom: 1px solid var(--border-strong); }
-.lb-ico {
-  width: 48px; height: 48px; border-radius: 12px;
-  display: grid; place-items: center;
-  background: var(--accent-soft); border: 1px solid rgba(239,80,35,0.25);
-  color: var(--accent); font-size: 1.1rem;
-}
-.lb-body h3 { margin: 0 0 4px; font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; }
-.lb-body p { margin: 0; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
-
 /* ---- Detail-page responsive ---- */
 @media (max-width: 980px) {
   .page-hero-grid { grid-template-columns: 1fr; gap: 44px; }
   .page-hero-copy { max-width: none; }
   .hire-card { max-width: 420px; }
-  .lebanon-grid { grid-template-columns: 1fr; gap: 36px; }
-  .lebanon-map { width: 200px; right: 0; bottom: auto; top: -8px; opacity: 0.26; }
 }
 @media (max-width: 720px) {
   .guarantee { grid-template-columns: auto 1fr; }
@@ -2107,6 +2086,29 @@ button.nav-link {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
+.waw-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+/* Why Hire cards adopt the homepage pillar-head pattern: icon beside the
+   title, "01 /" number prefix inline. Scoped to .waw-three so the shared
+   .waw-feat layout on train/accelerate is untouched. */
+.waw-three .waw-feat::after { content: none; }
+.waw-feat-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.waw-three .waw-feat-ico { margin-bottom: 0; flex-shrink: 0; }
+.waw-three .waw-feat h3 { margin: 0; font-size: 1.2rem; }
+.waw-three .waw-feat p { font-size: 0.95rem; }
+.waw-feat-num {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
 .waw-feat {
   position: relative;
   padding: 32px 28px;
@@ -2167,6 +2169,7 @@ button.nav-link {
   .waw-banner { grid-template-columns: 1fr; min-height: auto; }
   .waw-banner-graphic { display: none; }
   .waw-four { grid-template-columns: 1fr; }
+  .waw-three { grid-template-columns: 1fr; }
   .waw-feat:hover { transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {
