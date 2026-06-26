@@ -777,6 +777,11 @@ button.nav-link {
 .pillar-head .pillar-subtitle {
   margin-bottom: 0;
 }
+/* Subtle accent subtitle (train program cards). If kept, promote to base
+   .pillar-subtitle and apply on the homepage too. */
+.pillar-subtitle--accent {
+  color: var(--accent);
+}
 .pillar-desc {
   font-size: 0.95rem;
   color: var(--text-secondary);
@@ -1512,6 +1517,10 @@ button.nav-link {
 .wtway-step:nth-child(2) .wtway-node { animation-delay: 1.25s; }
 .wtway-step:nth-child(3) .wtway-node { animation-delay: 2.35s; }
 .wtway-step:nth-child(4) .wtway-node { animation-delay: 3.45s; }
+/* 3-node variant (train hero): re-time pings to the comet's slower passes */
+.wtway-3 .wtway-step:nth-child(1) .wtway-node { animation-delay: 0.3s; }
+.wtway-3 .wtway-step:nth-child(2) .wtway-node { animation-delay: 2.2s; }
+.wtway-3 .wtway-step:nth-child(3) .wtway-node { animation-delay: 4.0s; }
 .wtway-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
 .wtway-name { font-size: 0.98rem; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
 .wtway-num { color: var(--accent); font-weight: 700; }
@@ -1676,25 +1685,6 @@ button.nav-link {
 /* ============================================================
    TRAINING & DEVELOPMENT (02 / Build) - detail page
    ============================================================ */
-
-/* ---- Hero aside: program-formats card ---- */
-.format-card { padding-bottom: 24px; }
-.format-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-.format-list li {
-  display: grid; grid-template-columns: 38px 1fr; gap: 14px; align-items: center;
-  padding: 13px 14px;
-  border: 1px solid var(--border-strong); border-radius: 12px;
-  background: rgba(255,255,255,0.02);
-}
-.format-list .fmt-ico {
-  width: 38px; height: 38px; border-radius: 10px;
-  display: grid; place-items: center;
-  background: var(--accent-soft); border: 1px solid rgba(239,80,35,0.25);
-  color: var(--accent); font-size: 0.95rem;
-}
-.fmt-body { display: flex; flex-direction: column; }
-.fmt-name { font-size: 0.95rem; font-weight: 600; color: var(--text); }
-.fmt-note { font-size: 0.76rem; color: var(--text-secondary); margin-top: 2px; }
 
 /* ============================================================
    CULTURE & LEADERSHIP (03 / Connect) - detail page
@@ -2259,7 +2249,7 @@ button.nav-link {
   font-weight: 800;
   letter-spacing: -0.05em;
   color: var(--accent);
-  opacity: 0.07;
+  opacity: 0.18;
   line-height: 1;
   pointer-events: none;
   transition: opacity .35s ease;
@@ -2268,7 +2258,7 @@ button.nav-link {
   transform: translateY(-4px);
   border-color: rgba(239,80,35,0.45);
 }
-.waw-feat:hover::after { opacity: 0.15; }
+.waw-feat:hover::after { opacity: 0.30; }
 .waw-feat-ico {
   display: inline-flex; align-items: center; justify-content: center;
   width: 46px; height: 46px;
@@ -2296,6 +2286,26 @@ button.nav-link {
   color: var(--text-secondary);
   line-height: 1.65;
   margin: 0;
+}
+/* Train bento: icon beside the title + larger text. Scoped to .waw-feat-head
+   so accelerate's stacked .waw-feat cards stay as they are. */
+.waw-feat-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  padding-right: 52px; /* clear the corner number watermark */
+}
+.waw-feat-head .waw-feat-ico {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+.waw-feat-head h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+.waw-feat-head + p {
+  font-size: 1rem;
 }
 
 @media (max-width: 820px) {
