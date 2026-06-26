@@ -877,6 +877,41 @@ button.nav-link {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
+
+/* ── Audience chapters ─────────────────────────────────────────────
+   The two audience-pivot sections ("For organizations" / "For
+   salespeople") read as distinct rooms: a warm-dark zone tint with
+   accent-sealed edges, plus a pill eyebrow. Topic sections keep the
+   plain near-black bg and the plain .section-title eyebrow, so the
+   page reads as audience chapters punctuated by topic content.
+   Placed after .pillars/.individuals so the tint wins on source order. */
+.audience-zone {
+  background:
+    radial-gradient(ellipse 90% 60% at 50% 0%, rgba(239, 80, 35, 0.10), transparent 70%),
+    linear-gradient(180deg, #100806 0%, #0a0504 50%, #080403 100%);
+  border-top: 1px solid rgba(239, 80, 35, 0.28);
+  border-bottom: 1px solid rgba(239, 80, 35, 0.28);
+}
+
+/* Pill eyebrow: same small size as .section-title (uppercase/accent/
+   spacing inherited) — promoted from floating label to an object so the
+   crossing registers, without ever outranking the headline. */
+.audience-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  margin: 0 0 1.4rem;
+  padding: 0.45em 0.95em;
+  border: 1px solid rgba(239, 80, 35, 0.45);
+  border-radius: 999px;
+  background: rgba(239, 80, 35, 0.10);
+}
+.audience-eyebrow::before {
+  content: "\25B8"; /* ▸ */
+  color: var(--accent);
+  font-size: 0.95em;
+  line-height: 1;
+}
 .indiv-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
