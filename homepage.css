@@ -1452,6 +1452,18 @@ button.nav-link {
   .hero-node::before { top: 12px; left: 10px; }
   .hero-node .hn-word { font-size: 0.6rem; letter-spacing: 0.04em; }
   .hero-node .hn-verb { font-size: 0.52rem; }
+  /* Phones: the outer ring sits at inset:-6% and, when the visual is near
+     full-width, that ring + its glow get clipped flat by the screen edge.
+     Cap the visual smaller so the whole orbit (rings, glow, nodes) has side
+     margin, and soften the outer glow so the smaller circle doesn't read heavy.
+     Words stay intact; desktop is untouched. */
+  .hero-visual { max-width: 280px; }
+  .hero-orbit.outer { box-shadow: 0 0 16px rgba(239,80,35,0.18); }
+  /* Phones: stack the hero CTAs full-width so their left edge aligns with the
+     left-aligned headline and they read as deliberate bars, not floating pills.
+     justify-content centers the label once the button is full-width. */
+  .hero-ctas { flex-direction: column; align-items: stretch; }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
   .indiv-card { padding: 28px 22px; }
   .indiv-card:hover { transform: none; }
 }
