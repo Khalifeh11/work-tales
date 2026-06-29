@@ -2522,3 +2522,33 @@ button.nav-link {
   .faq-item[open] summary::after { transition: none; }
   .principle:hover .principle-ico { transform: none; }
 }
+
+/* ============================================================
+   OPEN-ROLES EMBED (talent.html)
+   ============================================================ */
+.roles-embed {
+  margin-top: 40px;
+  border: 1px solid var(--border-strong);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(35,31,32,0.4) 0%, rgba(0,0,0,0.6) 100%);
+  overflow: hidden;
+}
+.roles-embed iframe {
+  display: block;
+  width: 100%;
+  min-height: 640px;
+  border: 0;
+}
+.roles-embed-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 72px 32px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+@media (max-width: 600px) {
+  .roles-embed-placeholder { padding: 48px 22px; }
+  .roles-embed iframe { min-height: 520px; }
+}
