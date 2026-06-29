@@ -2646,6 +2646,16 @@ button.nav-link {
   min-height: 640px;
   border: 0;
 }
+/* RecruitCRM hosted form: narrower, centered card on a white surface */
+.roles-embed--form {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+}
+.roles-embed--form iframe {
+  min-height: 760px;
+}
 .roles-embed-placeholder {
   display: flex;
   flex-direction: column;
@@ -2658,4 +2668,5 @@ button.nav-link {
 @media (max-width: 600px) {
   .roles-embed-placeholder { padding: 48px 22px; }
   .roles-embed iframe { min-height: 520px; }
+  .roles-embed--form iframe { min-height: 900px; }
 }
